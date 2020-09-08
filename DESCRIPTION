@@ -1,0 +1,21 @@
+Package: tidyExt
+Type: Package
+Title: Handy Wrappers for Tidyverse
+Version: 0.1.0
+Author: Brendan Ansell
+Maintainer: The package maintainer <rpbrendan@gmail.com>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+    NB blank lines in this file will cause roxygenize() to fail.
+License: 
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr,
+    ggplot2,
+    magrittr,
+    RColorBrewer,
+    scales,
+    tibble,
+    tidyselect
+RoxygenNote: 7.1.1
+
