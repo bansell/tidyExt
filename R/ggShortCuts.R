@@ -19,7 +19,7 @@ x_angle45 <- ggplot2::theme(axis.text.x = ggplot2::element_text(angle=45, hjust=
 
 #' @export
 
-geom_smooth <- geom_smooth(method='lm')
+geom_smooth <- ggplot2::geom_smooth(method='lm')
 
 #Edit  legend title
 #guides(col=guide_legend(title="Patient ID"),fill=guide_legend(title="Patient ID"))
