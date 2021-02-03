@@ -3,7 +3,7 @@
 #' @param my_palette An RColourBrewer palette name (see RColorBrewer::display.brewer.all())
 #' @param nCols Number of colours to select from palette. These will be evenly spaced across palette.
 #' @export
-brewer_GG_col <- function(my_palette = 'Paired',nCols){
+brewer_GG_col <- function(my_palette = 'Paired', nCols = 6){
     scales::brewer_pal(palette = my_palette)(nCols)
   }
 #'
