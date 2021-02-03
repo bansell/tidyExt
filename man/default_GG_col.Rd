@@ -4,7 +4,7 @@
 \alias{default_GG_col}
 \title{Select ggplot default colour palette of n. colours}
 \usage{
-default_GG_col(x)
+default_GG_col(nCols = 5)
 }
 \arguments{
 \item{x}{N colours to select}

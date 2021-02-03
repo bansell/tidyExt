@@ -4,7 +4,7 @@
 \alias{brewer_GG_col}
 \title{Select R color brewer palette of type my_palette with nCols n colours}
 \usage{
-brewer_GG_col(my_palette = "Paired", nCols)
+brewer_GG_col(my_palette = "Paired", nCols = 6)
 }
 \arguments{
 \item{my_palette}{An RColourBrewer palette name (see RColorBrewer::display.brewer.all())}
