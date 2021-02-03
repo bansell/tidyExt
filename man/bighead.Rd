@@ -4,7 +4,7 @@
 \alias{bighead}
 \title{Extract from a DGE object genes associated with a GO term of interest, e.g. from GSEA testing. Requires GOsource() output.}
 \usage{
-bighead(.df, n)
+bighead(.df, n = 6)
 }
 \arguments{
 \item{.df}{A data frame or matrix}

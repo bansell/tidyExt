@@ -11,7 +11,7 @@
 #' mtc_mat <- as.matrix(mtcars)
 #' mtc_mat %>% bighead(8)
 
-bighead <- function(.df,n){
+bighead <- function(.df, n = 6){
 
   as_tibble(.df[1:n,1:n]) }
 
