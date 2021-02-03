@@ -2,5 +2,5 @@
 #' @export
 #' @examples
 #' printScriptDir()
-
 printScriptDir <- function(x = .){ rstudioapi::getActiveDocumentContext()$path }
+
