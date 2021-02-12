@@ -2,10 +2,15 @@
 #' @name default_GG_col
 #' @param nColours N colours to display
 #' @export
-default_GG_col <- function(nColours = 3){
-  print(scales::hue_pal()(nColours))
-  scales::show_col(scales::hue_pal()(nColours))
-  }
+default_GG_col <- function(nColours = 3, plot = TRUE){
+  my_obj <- scales::hue_pal()(nColours)
+  if(plot==TRUE){
+      scales::show_col(my_obj)
+      return(my_obj)
+    }else{
+      return(my_obj)
+    }
+}
 #'
 #' @examples
 #' default_GG_col(3)

@@ -4,7 +4,7 @@
 \alias{brewer_GG_col}
 \title{Select R color brewer palette of type my_palette with nCols n colours}
 \usage{
-brewer_GG_col(nColours = 4, my_palette = "Paired")
+brewer_GG_col(nColours = 4, my_palette = "Paired", plot = T)
 }
 \arguments{
 \item{nColours}{Number of colours to select from palette. These will be evenly spaced across palette.}
