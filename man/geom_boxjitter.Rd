@@ -2,10 +2,21 @@
 % Please edit documentation in R/geom_boxcustom.R
 \name{geom_boxjitter}
 \alias{geom_boxjitter}
-\title{Custom ggplot geoms}
+\title{Custom ggplot geoms
+Create boxplots overlaid with datapoints, displaying exact y values and jittered x values.}
 \usage{
-geom_boxjitter(...)
+geom_boxjitter(..., point_size = 0.5, point_col = "black", box_alpha = 1)
+}
+\value{
+A ggplot.
 }
 \description{
 Custom ggplot geoms
+Create boxplots overlaid with datapoints, displaying exact y values and jittered x values.
+}
+\examples{
+mpg \%>\% ggplot(aes(x=class, y=cty)) +
+ geom_boxjitter(notch = F, point_size = 2, point_col='dodger blue')
+mpg \%>\% ggplot(aes(x=class, y=cty, col=factor(year))) +
+ geom_boxdodge(point_size = 3,box_alpha = 0.75)
 }
