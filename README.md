@@ -214,27 +214,15 @@ sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_poi
 
 <br>
 
-## x\_angle30
+## x\_angle()
 
-Angle x axis labels at 30°
+Set x labels at any angle. 30° by default.
 
 ``` r
-mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle30
+mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
-
-<br>
-
-## x\_angle45
-
-Angle x axis labels at 45°
-
-``` r
-mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle45
-```
-
-![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 <br>
 
@@ -253,7 +241,7 @@ my_df %>% gather(key,value,year,cyl,drv,manufacturer) %>%
    bottom_legend
 ```
 
-![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 It is very hard to distinguish the data from years 1999 vs 2008, and the
 figure legend is a jumble of labels from all facets.
@@ -275,7 +263,7 @@ my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
 plot_cycle_col(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
 ```
 
-![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 <br>
 
@@ -293,7 +281,7 @@ selected colours, from default ggplot2 or RColorBrewer palettes.
 default_GG_col(12)
 ```
 
-![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
     ##  [1] "#F8766D" "#DE8C00" "#B79F00" "#7CAE00" "#00BA38" "#00C08B" "#00BFC4"
     ##  [8] "#00B4F0" "#619CFF" "#C77CFF" "#F564E3" "#FF64B0"
@@ -350,7 +338,7 @@ RColorBrewer::brewer.pal.info
 brewer_GG_col(6,'Blues')
 ```
 
-![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
 
     ## [1] "#EFF3FF" "#C6DBEF" "#9ECAE1" "#6BAED6" "#3182BD" "#08519C"
 
@@ -358,7 +346,7 @@ brewer_GG_col(6,'Blues')
 brewer_GG_col(4,'Paired')
 ```
 
-![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-23-2.png)<!-- -->
+![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-22-2.png)<!-- -->
 
     ## [1] "#A6CEE3" "#1F78B4" "#B2DF8A" "#33A02C"
 
@@ -366,7 +354,7 @@ brewer_GG_col(4,'Paired')
 brewer_GG_col(4,'RdYlBu')
 ```
 
-![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-23-3.png)<!-- -->
+![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-22-3.png)<!-- -->
 
     ## [1] "#D7191C" "#FDAE61" "#ABD9E9" "#2C7BB6"
 
@@ -392,12 +380,12 @@ diamond_mat %>% bighead()
     ## # A tibble: 6 x 6
     ##   carat cut       color clarity depth table
     ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
-    ## 1 0.81  Ideal     F     SI2     62.1  57.0 
-    ## 2 0.72  Very Good H     VS1     60.6  63.0 
-    ## 3 1.00  Fair      H     SI2     69.5  55.0 
-    ## 4 0.70  Ideal     G     VVS2    62.1  56.0 
-    ## 5 1.01  Fair      H     SI2     65.4  59.0 
-    ## 6 0.74  Very Good G     VS1     59.8  58.0
+    ## 1 0.32  Very Good H     SI2     61.8  55.0 
+    ## 2 0.70  Very Good D     SI1     62.3  58.0 
+    ## 3 0.71  Premium   G     VS1     62.4  61.0 
+    ## 4 0.70  Ideal     F     VS1     62.4  56.0 
+    ## 5 0.71  Ideal     D     SI1     62.4  57.0 
+    ## 6 0.83  Premium   H     SI1     62.5  59.0
 
 NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 

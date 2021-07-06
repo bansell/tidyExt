@@ -160,21 +160,13 @@ sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_poi
 
 <br>
 
-## x_angle30
+## x_angle()
 
-Angle x axis labels at 30°
+Set x labels at any angle. 30° by default.
 ```{r}
-mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle30
+mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
 ```
 
-<br>
-
-## x_angle45
-
-Angle x axis labels at 45°
-```{r}
-mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle45
-```
 
 <br>
 
@@ -271,4 +263,8 @@ NB Not run here. This will print the entire table to the console when called fro
 
 We hope these functions are useful for making your daily R coding work quicker and easier! Please don't hesitate to modify for your own use or suggest updates through github.
 
+
+```{r,include=F}
+ system('bash update_readme.sh')
+```
 
