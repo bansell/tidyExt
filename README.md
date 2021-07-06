@@ -9,7 +9,9 @@ package contains a host of helper functions designed to minimize
 keystrokes, and to overcome some comon pain-points in plotting, data
 summarization and environment management.
 
-# Instalation
+<br>
+
+# Installation
 
 To install the development version, if required first install devtools
 
@@ -30,7 +32,11 @@ library(tidyverse)
 library(tidyExt)
 ```
 
+<br>
+
 # Source code & environment management
+
+<br>
 
 ## printScriptDir()
 
@@ -47,6 +53,8 @@ printScriptDir()
 NB run from your .R or .Rmd file, this function will not return the
 characters “\#\# \[1\]” in the console.
 
+<br>
+
 ## fix\_tidyverse\_conflicts()
 
 Certain tidyverse functions like rename() and select() often conflict
@@ -58,7 +66,11 @@ fix\_tidyverse\_conflicts(). Thanks to Jacob Munro for this one.
 fix_tidyverse_conflicts()
 ```
 
+<br>
+
 # Plotting
+
+<br>
 
 ## geom\_boxjitter()
 
@@ -72,6 +84,8 @@ mpg %>% ggplot(aes(x=class, y=cty)) +
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
+<br>
+
 ## geom\_boxdodge()
 
 Make nested boxplots with overlaid datapoints. There is no jitter in the
@@ -84,9 +98,11 @@ mpg %>% ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
+<br>
+
 # statistricks!
 
-…sorry. Here are some useful statistics shortcuts:
+…sorry. Here are some useful statistics shortcuts: <br>
 
 ## smooth\_lm()
 
@@ -100,6 +116,8 @@ mpg %>% ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
     ## `geom_smooth()` using formula 'y ~ x'
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+<br>
 
 ## scale\_this()
 
@@ -126,6 +144,8 @@ diamonds %>% mutate(table_scale = scale_this(table)) %>% select(table_scale) %>%
 
     ## tibble [53,940 × 1] (S3: tbl_df/tbl/data.frame)
     ##  $ table_scale: num [1:53940] -1.1 1.586 3.376 0.243 0.243 ...
+
+<br>
 
 ## sort\_pct()
 
@@ -166,9 +186,13 @@ diamonds %>% sort_pct(cut,color)
     ## 10 Premium   F      2331 0.0432
     ## # … with 25 more rows
 
+<br>
+
 # ggplot shortcuts
 
 Minimize keystrokes for common plot label and legend modifications
+
+<br>
 
 ## bottom\_legend
 
@@ -178,6 +202,8 @@ sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_poi
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
+<br>
+
 ## no\_legend
 
 ``` r
@@ -185,6 +211,8 @@ sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_poi
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+
+<br>
 
 ## x\_angle30
 
@@ -196,6 +224,8 @@ mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle30
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
+<br>
+
 ## x\_angle45
 
 Angle x axis labels at 45°
@@ -205,6 +235,8 @@ mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle45
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+
+<br>
 
 ## plot\_cycle\_col()
 
@@ -245,11 +277,15 @@ plot_cycle_col(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_ve
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
+<br>
+
 # Colour scales
 
 Creating and modifying colour scales can be hard work in ggplot2. These
 functions help to print the HEX codes and display the swatch for the
 selected colours, from default ggplot2 or RColorBrewer palettes.
+
+<br>
 
 ## default\_GG\_col
 
@@ -261,6 +297,8 @@ default_GG_col(12)
 
     ##  [1] "#F8766D" "#DE8C00" "#B79F00" "#7CAE00" "#00BA38" "#00C08B" "#00BFC4"
     ##  [8] "#00B4F0" "#619CFF" "#C77CFF" "#F564E3" "#FF64B0"
+
+<br>
 
 ## brewer\_GG\_col
 
@@ -332,7 +370,11 @@ brewer_GG_col(4,'RdYlBu')
 
     ## [1] "#D7191C" "#FDAE61" "#ABD9E9" "#2C7BB6"
 
+<br>
+
 # Data views
+
+<br>
 
 ## bighead()
 
@@ -350,14 +392,16 @@ diamond_mat %>% bighead()
     ## # A tibble: 6 x 6
     ##   carat cut       color clarity depth table
     ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
-    ## 1 1.22  Premium   E     I1      60.9  57.0 
-    ## 2 0.60  Ideal     F     VVS2    62.0  55.0 
-    ## 3 0.80  Ideal     F     SI2     59.9  59.0 
-    ## 4 0.82  Very Good G     SI1     63.4  55.0 
-    ## 5 0.73  Premium   E     VS2     62.5  61.0 
-    ## 6 0.71  Ideal     E     VS2     61.0  55.0
+    ## 1 0.72  Premium   E     VS2     58.3  58.0 
+    ## 2 0.70  Premium   F     VS2     58.7  61.0 
+    ## 3 0.71  Very Good F     VS1     62.2  58.0 
+    ## 4 0.83  Good      I     VS2     64.6  54.0 
+    ## 5 0.72  Premium   F     VS1     58.8  60.0 
+    ## 6 0.79  Premium   E     VS2     60.6  53.0
 
 NB this will return an 8x8 data frame as default when run in .R or .Rmd.
+
+<br>
 
 ## print\_all()
 
@@ -372,6 +416,8 @@ mpg %>% print_all()
 
 NB Not run here. This will print the entire table to the console when
 called from the console, a .R or .Rmd file.
+
+<br>
 
 # Summary
 

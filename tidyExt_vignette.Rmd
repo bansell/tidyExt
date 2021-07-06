@@ -14,7 +14,9 @@ knitr::opts_knit$set(root.dir = '~/Git/tidyExt/', echo=TRUE)
 <br>
 The tidyverse is a user-friendly suite of R packages designed to make data analysis simpler, less error-prone and more enjoyable. This package contains a host of helper functions designed to minimize keystrokes, and to overcome some comon pain-points in plotting, data summarization and environment management.
 
-# Instalation
+<br>
+
+# Installation
 To install the development version, if required first install devtools
 ```{r, eval=F}
 
@@ -38,8 +40,10 @@ library(tidyExt)
 devtools::load_all()
 ```
 
+<br>
 
 # Source code & environment management
+<br>
 
 ## printScriptDir()
 
@@ -51,6 +55,8 @@ printScriptDir()
 
 NB run from your .R or .Rmd file, this function will not return the characters "## [1]  " in the console.
 
+<br>
+
 ## fix_tidyverse_conflicts()
 
 Certain tidyverse functions like rename() and select() often conflict with function names from other packages. If many packages are loaded, to reset the tidyverse functions as the default, after use fix_tidyverse_conflicts(). Thanks to Jacob Munro for this one.
@@ -58,8 +64,11 @@ Certain tidyverse functions like rename() and select() often conflict with funct
 fix_tidyverse_conflicts()
 ```
 
+<br>
 
 # Plotting
+
+<br>
 
 ## geom_boxjitter() 
 Make boxplots with overlaid datapoints. There is no jitter in the y axis in order to accurately represent data values.
@@ -68,6 +77,7 @@ mpg %>% ggplot(aes(x=class, y=cty)) +
    geom_boxjitter( point_size = 2, point_col='dodger blue')
 ```
 
+<br>
 
 ## geom_boxdodge() 
 Make nested boxplots with overlaid datapoints. There is no jitter in the y axis in order to accurately represent data values.
@@ -78,10 +88,12 @@ mpg %>% ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
 ```
 
 
+<br>
 
 # statistricks! 
 
 ...sorry. Here are some useful statistics shortcuts:
+<br>
 
 ## smooth_lm()
 
@@ -91,6 +103,7 @@ mpg %>% ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
 
 ```
 
+<br>
 
 ## scale_this()
 
@@ -109,6 +122,7 @@ diamonds %>% mutate(table_scale = scale_this(table)) %>% select(table_scale) %>%
 
 ```
 
+<br>
 
 ## sort_pct()
 
@@ -123,22 +137,28 @@ More complex:
 diamonds %>% sort_pct(cut,color)
 ```
 
+<br>
 
 # ggplot shortcuts
 
 Minimize keystrokes for common plot label and legend modifications
 
+<br>
 
 ## bottom_legend
 ```{r}
 sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend
 ```
 
+<br>
+
 ## no_legend
 
 ```{r}
 sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend
 ```
+
+<br>
 
 ## x_angle30
 
@@ -147,6 +167,8 @@ Angle x axis labels at 30°
 mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle30
 ```
 
+<br>
+
 ## x_angle45
 
 Angle x axis labels at 45°
@@ -154,6 +176,7 @@ Angle x axis labels at 45°
 mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle45
 ```
 
+<br>
 
 ## plot_cycle_col()
 
@@ -184,16 +207,21 @@ plot_cycle_col(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_ve
 
 ```
 
+<br>
 
 # Colour scales
 
 Creating and modifying colour scales can be hard work in ggplot2. These functions help to print the HEX codes and display the swatch for the selected colours, from default ggplot2 or RColorBrewer palettes.
+
+<br>
 
 ## default_GG_col
 
 ```{r}
 default_GG_col(12)
 ```
+
+<br>
 
 ## brewer_GG_col
 
@@ -210,8 +238,11 @@ brewer_GG_col(4,'RdYlBu')
 ```
 
 
+<br>
 
 # Data views
+
+<br>
 
 ## bighead()
 
@@ -223,6 +254,8 @@ diamond_mat %>% bighead()
 ```
 NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 
+<br>
+
 ## print_all()
 
 The default console output for tidyverse tables is to display 6 rows of data. Use _print_all()_ to output the entire table in the console. This is useful for data frames of intermediate size (7-100 rows) instead of modifying print() or using _View()_.
@@ -232,6 +265,7 @@ mpg %>% print_all()
 ```
 NB Not run here. This will print the entire table to the console when called from the console, a .R or .Rmd file.
 
+<br>
 
 # Summary
 
