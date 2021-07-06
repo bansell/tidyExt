@@ -4,8 +4,8 @@ Title: Handy Wrappers and Extensions for the Tidyverse
 Version: 0.1.0
 Author: Brendan Ansell
 Maintainer: The package maintainer <rpbrendan@gmail.com>
-Description: This package contains a host of helper functions designed to minimize keystrokes, 
-    and to overcome some comon pain-points in plotting, data summarization and environment management.
+Description: This package contains a host of tidyverse helper functions designed to minimize keystrokes, 
+    and to overcome some common pain-points in plotting, data summarization and environment management.
 License: 
 Encoding: UTF-8
 LazyData: true
