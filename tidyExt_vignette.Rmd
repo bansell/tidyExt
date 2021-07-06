@@ -1,0 +1,240 @@
+---
+title: "tidyExt package"
+output: rmarkdown::github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '~/Git/tidyExt/', echo=TRUE)
+
+#setwd('~/Git/tidyExt/')
+```
+
+# Handy wrappers and extensions for the tidyverse
+<br>
+<br>
+The tidyverse is a user-friendly suite of R packages designed to make data analysis simpler, less error-prone and more enjoyable. This package contains a host of helper functions designed to minimize keystrokes, and to overcome some comon pain-points in plotting, data summarization and environment management.
+
+# Instalation
+To install the development version, if required first install devtools
+```{r, eval=F}
+
+install.packages('devtools')
+```
+
+To install tidyExt:
+```{r, eval=F, message=F}
+devtools::install_github('bansell/tidyExt')
+
+```
+
+Load tidyverse and tidyExt:
+
+```{r,message=F}
+library(tidyverse)
+library(tidyExt)
+```
+
+```{r,echo=F,include=F}
+devtools::load_all()
+```
+
+
+# Source code & environment management
+
+## printScriptDir()
+
+To manage source code files across multiple systems and folders, it can be useful to quickly print the entire path for the source file you are working in, without quotes for quick copy/paste. 
+
+```{r}
+printScriptDir() 
+```
+
+NB run from your .R or .Rmd file, this function will not return the characters "## [1]  " in the console.
+
+## fix_tidyverse_conflicts()
+
+Certain tidyverse functions like rename() and select() often conflict with function names from other packages. If many packages are loaded, to reset the tidyverse functions as the default, after use fix_tidyverse_conflicts(). Thanks to Jacob Munro for this one.
+```{r}
+fix_tidyverse_conflicts()
+```
+
+
+# Plotting
+
+## geom_boxjitter() 
+Make boxplots with overlaid datapoints. There is no jitter in the y axis in order to accurately represent data values.
+```{r}
+mpg %>% ggplot(aes(x=class, y=cty)) +
+   geom_boxjitter( point_size = 2, point_col='dodger blue')
+```
+
+
+## geom_boxdodge() 
+Make nested boxplots with overlaid datapoints. There is no jitter in the y axis in order to accurately represent data values.
+
+```{r}
+mpg %>% ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
+ geom_boxdodge()
+```
+
+
+
+# statistricks! 
+
+...sorry. Here are some useful statistics shortcuts:
+
+## smooth_lm()
+
+Adds a linear regression line to scatter plot and calls ggpubr to print the line equation and p value
+```{r, warning=F}
+mpg %>% ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
+
+```
+
+
+## scale_this()
+
+A wrapper for scale() that returns a single vector to use within dplyr::mutate() etc.
+This function is copied from [here](https://stackoverflow.com/a/35776313).
+
+scale() output:
+```{r}
+diamonds %>% mutate(table_scale = scale(table)) %>% select(table_scale) %>% str()
+```
+
+scale_this() output:
+```{r}
+
+diamonds %>% mutate(table_scale = scale_this(table)) %>% select(table_scale) %>% str()
+
+```
+
+
+## sort_pct()
+
+A way to simultaneously count and sort the relative proportion of character data in descending order.
+Simple example:
+```{r}
+diamonds %>% sort_pct(cut)
+
+```
+More complex:
+```{r}
+diamonds %>% sort_pct(cut,color)
+```
+
+
+# ggplot shortcuts
+
+Minimize keystrokes for common plot label and legend modifications
+
+
+## bottom_legend
+```{r}
+sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend
+```
+
+## no_legend
+
+```{r}
+sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend
+```
+
+## x_angle30
+
+Angle x axis labels at 30°
+```{r}
+mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle30
+```
+
+## x_angle45
+
+Angle x axis labels at 45°
+```{r}
+mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle45
+```
+
+
+## plot_cycle_col()
+
+This function is useful when you want to make scatterplots (for example, PCA plots) coloured by multiple different factors. The colour space is rapidly exhausted and important plotting information is lost. For example:
+
+```{r, warning=F,fig.height=8,fig.width=8}
+
+my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
+
+my_df %>% gather(key,value,year,cyl,drv,manufacturer) %>% 
+   ggplot(aes(cty,hwy,col=value)) + geom_point() + facet_wrap(~key,ncol=2) +
+   bottom_legend
+```
+
+It is very hard to distinguish the data from years 1999 vs 2008, and the figure legend is a jumble of labels from all facets.
+
+To handle this, we recycling the default ggcolour scale to maximize the contrast in each facet. Caution: be sure to check the legend under each plot to avoid confusing the colour encodings between facets. 
+
+First create a vector containing the column names of interest for colouring points in the scatterplot
+```{r}
+my_features <- c('year','drv','cyl','manufacturer')
+```
+
+```{r, fig.height=10,fig.width=8}
+my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
+
+plot_cycle_col(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
+
+```
+
+
+# Colour scales
+
+Creating and modifying colour scales can be hard work in ggplot2. These functions help to print the HEX codes and display the swatch for the selected colours, from default ggplot2 or RColorBrewer palettes.
+
+## default_GG_col
+
+```{r}
+default_GG_col(12)
+```
+
+## brewer_GG_col
+
+First check out the palette information to see all of the available Brewer palettes.
+```{r}
+RColorBrewer::brewer.pal.info
+```
+
+
+```{r}
+brewer_GG_col(6,'Blues')
+brewer_GG_col(4,'Paired')
+brewer_GG_col(4,'RdYlBu')
+```
+
+
+
+# Data views
+
+## bighead()
+
+The utils::head() function will print all column names which can flood the console. For large matrices in particular, its often useful to check the top left corner of the matrix. *bighead(n)* prints a square data frame of dimensions n X n.
+```{r}
+diamond_mat <- as.matrix(diamonds[sample(1000), ])
+
+diamond_mat %>% bighead()
+```
+NB this will return an 8x8 data frame as default when run in .R or .Rmd.
+
+## print_all()
+
+The default console output for tidyverse tables is to display 6 rows of data. Use _print_all()_ to output the entire table in the console. This is useful for data frames of intermediate size (7-100 rows) instead of modifying print() or using _View()_.
+
+```{r, eval=F}
+mpg %>% print_all()
+```
+NB Not run here. This will print the entire table to the console when called from the console, a .R or .Rmd file.
+
+
+# Summary
+
+We hope these functions are useful for making your daily R coding work quicker and easier! Please don't hesitate to modify for your own use or suggest updates through github.
+
+
