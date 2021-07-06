@@ -6,7 +6,7 @@ tidyExt package
 <br> <br> The tidyverse is a user-friendly suite of R packages designed
 to make data analysis simpler, less error-prone and more enjoyable. This
 package contains a host of helper functions designed to minimize
-keystrokes, and to overcome some comon pain-points in plotting, data
+keystrokes, and to overcome some common pain-points in plotting, data
 summarization and environment management.
 
 <br>
@@ -60,7 +60,7 @@ characters “\#\# \[1\]” in the console.
 Certain tidyverse functions like rename() and select() often conflict
 with function names from other packages. If many packages are loaded, to
 reset the tidyverse functions as the default, after use
-fix\_tidyverse\_conflicts(). Thanks to Jacob Munro for this one.
+`fix_tidyverse_conflicts()`. Thanks to Jacob Munro for this one.
 
 ``` r
 fix_tidyverse_conflicts()
@@ -122,7 +122,7 @@ mpg %>% ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
 ## scale\_this()
 
 A wrapper for scale() that returns a single vector to use within
-dplyr::mutate() etc. This function is copied from
+`dplyr::mutate()` etc. This function is copied from
 [here](https://stackoverflow.com/a/35776313).
 
 scale() output:
@@ -287,7 +287,7 @@ selected colours, from default ggplot2 or RColorBrewer palettes.
 
 <br>
 
-## default\_GG\_col
+## default\_GG\_col()
 
 ``` r
 default_GG_col(12)
@@ -300,7 +300,7 @@ default_GG_col(12)
 
 <br>
 
-## brewer\_GG\_col
+## brewer\_GG\_col()
 
 First check out the palette information to see all of the available
 Brewer palettes.
@@ -378,9 +378,9 @@ brewer_GG_col(4,'RdYlBu')
 
 ## bighead()
 
-The utils::head() function will print all column names which can flood
+The `utils::head()` function will print all column names which can flood
 the console. For large matrices in particular, its often useful to check
-the top left corner of the matrix. *bighead(n)* prints a square data
+the top left corner of the matrix. `bighead(n)` prints a square data
 frame of dimensions n X n.
 
 ``` r
@@ -392,12 +392,12 @@ diamond_mat %>% bighead()
     ## # A tibble: 6 x 6
     ##   carat cut       color clarity depth table
     ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
-    ## 1 0.72  Premium   E     VS2     58.3  58.0 
-    ## 2 0.70  Premium   F     VS2     58.7  61.0 
-    ## 3 0.71  Very Good F     VS1     62.2  58.0 
-    ## 4 0.83  Good      I     VS2     64.6  54.0 
-    ## 5 0.72  Premium   F     VS1     58.8  60.0 
-    ## 6 0.79  Premium   E     VS2     60.6  53.0
+    ## 1 0.81  Ideal     F     SI2     62.1  57.0 
+    ## 2 0.72  Very Good H     VS1     60.6  63.0 
+    ## 3 1.00  Fair      H     SI2     69.5  55.0 
+    ## 4 0.70  Ideal     G     VVS2    62.1  56.0 
+    ## 5 1.01  Fair      H     SI2     65.4  59.0 
+    ## 6 0.74  Very Good G     VS1     59.8  58.0
 
 NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 
@@ -406,9 +406,9 @@ NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 ## print\_all()
 
 The default console output for tidyverse tables is to display 6 rows of
-data. Use *print\_all()* to output the entire table in the console. This
+data. Use `print_all()` to output the entire table in the console. This
 is useful for data frames of intermediate size (7-100 rows) instead of
-modifying print() or using *View()*.
+modifying `print()` or using `View()`.
 
 ``` r
 mpg %>% print_all()

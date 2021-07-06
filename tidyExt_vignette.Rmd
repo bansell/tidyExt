@@ -12,7 +12,7 @@ knitr::opts_knit$set(root.dir = '~/Git/tidyExt/', echo=TRUE)
 # Handy wrappers and extensions for the tidyverse
 <br>
 <br>
-The tidyverse is a user-friendly suite of R packages designed to make data analysis simpler, less error-prone and more enjoyable. This package contains a host of helper functions designed to minimize keystrokes, and to overcome some comon pain-points in plotting, data summarization and environment management.
+The tidyverse is a user-friendly suite of R packages designed to make data analysis simpler, less error-prone and more enjoyable. This package contains a host of helper functions designed to minimize keystrokes, and to overcome some common pain-points in plotting, data summarization and environment management.
 
 <br>
 
@@ -59,7 +59,7 @@ NB run from your .R or .Rmd file, this function will not return the characters "
 
 ## fix_tidyverse_conflicts()
 
-Certain tidyverse functions like rename() and select() often conflict with function names from other packages. If many packages are loaded, to reset the tidyverse functions as the default, after use fix_tidyverse_conflicts(). Thanks to Jacob Munro for this one.
+Certain tidyverse functions like rename() and select() often conflict with function names from other packages. If many packages are loaded, to reset the tidyverse functions as the default, after use `fix_tidyverse_conflicts()`. Thanks to Jacob Munro for this one.
 ```{r}
 fix_tidyverse_conflicts()
 ```
@@ -107,7 +107,7 @@ mpg %>% ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
 
 ## scale_this()
 
-A wrapper for scale() that returns a single vector to use within dplyr::mutate() etc.
+A wrapper for scale() that returns a single vector to use within `dplyr::mutate()` etc.
 This function is copied from [here](https://stackoverflow.com/a/35776313).
 
 scale() output:
@@ -215,7 +215,7 @@ Creating and modifying colour scales can be hard work in ggplot2. These function
 
 <br>
 
-## default_GG_col
+## default_GG_col()
 
 ```{r}
 default_GG_col(12)
@@ -223,7 +223,7 @@ default_GG_col(12)
 
 <br>
 
-## brewer_GG_col
+## brewer_GG_col()
 
 First check out the palette information to see all of the available Brewer palettes.
 ```{r}
@@ -246,7 +246,7 @@ brewer_GG_col(4,'RdYlBu')
 
 ## bighead()
 
-The utils::head() function will print all column names which can flood the console. For large matrices in particular, its often useful to check the top left corner of the matrix. *bighead(n)* prints a square data frame of dimensions n X n.
+The `utils::head()` function will print all column names which can flood the console. For large matrices in particular, its often useful to check the top left corner of the matrix. `bighead(n)` prints a square data frame of dimensions n X n.
 ```{r}
 diamond_mat <- as.matrix(diamonds[sample(1000), ])
 
@@ -258,7 +258,7 @@ NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 
 ## print_all()
 
-The default console output for tidyverse tables is to display 6 rows of data. Use _print_all()_ to output the entire table in the console. This is useful for data frames of intermediate size (7-100 rows) instead of modifying print() or using _View()_.
+The default console output for tidyverse tables is to display 6 rows of data. Use `print_all()` to output the entire table in the console. This is useful for data frames of intermediate size (7-100 rows) instead of modifying `print()` or using `View()`.
 
 ```{r, eval=F}
 mpg %>% print_all()
