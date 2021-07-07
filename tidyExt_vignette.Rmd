@@ -95,7 +95,7 @@ mpg %>% ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
 ...sorry. Here are some useful statistics shortcuts:
 <br>
 
-## smooth_lm()
+## geom_smooth_lm()
 
 Adds a linear regression line to scatter plot and calls ggpubr to print the line equation and p value
 ```{r, warning=F}
@@ -145,17 +145,17 @@ Minimize keystrokes for common plot label and legend modifications
 
 <br>
 
-## bottom_legend
+## bottom_legend()
 ```{r}
-sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend
+sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend()
 ```
 
 <br>
 
-## no_legend
+## no_legend()
 
 ```{r}
-sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend
+sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend()
 ```
 
 <br>
@@ -170,7 +170,7 @@ mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
 
 <br>
 
-## plot_cycle_col()
+## plot_cycle_cols()
 
 This function is useful when you want to make scatterplots (for example, PCA plots) coloured by multiple different factors. The colour space is rapidly exhausted and important plotting information is lost. For example:
 
@@ -180,7 +180,7 @@ my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
 
 my_df %>% gather(key,value,year,cyl,drv,manufacturer) %>% 
    ggplot(aes(cty,hwy,col=value)) + geom_point() + facet_wrap(~key,ncol=2) +
-   bottom_legend
+   bottom_legend()
 ```
 
 It is very hard to distinguish the data from years 1999 vs 2008, and the figure legend is a jumble of labels from all facets.
@@ -195,7 +195,7 @@ my_features <- c('year','drv','cyl','manufacturer')
 ```{r, fig.height=10,fig.width=8}
 my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
 
-plot_cycle_col(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
+plot_cycle_cols(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
 
 ```
 

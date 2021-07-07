@@ -104,7 +104,7 @@ mpg %>% ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
 
 …sorry. Here are some useful statistics shortcuts: <br>
 
-## smooth\_lm()
+## geom\_smooth\_lm()
 
 Adds a linear regression line to scatter plot and calls ggpubr to print
 the line equation and p value
@@ -194,20 +194,20 @@ Minimize keystrokes for common plot label and legend modifications
 
 <br>
 
-## bottom\_legend
+## bottom\_legend()
 
 ``` r
-sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend
+sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 <br>
 
-## no\_legend
+## no\_legend()
 
 ``` r
-sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend
+sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
@@ -226,7 +226,7 @@ mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
 
 <br>
 
-## plot\_cycle\_col()
+## plot\_cycle\_cols()
 
 This function is useful when you want to make scatterplots (for example,
 PCA plots) coloured by multiple different factors. The colour space is
@@ -238,7 +238,7 @@ my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
 
 my_df %>% gather(key,value,year,cyl,drv,manufacturer) %>% 
    ggplot(aes(cty,hwy,col=value)) + geom_point() + facet_wrap(~key,ncol=2) +
-   bottom_legend
+   bottom_legend()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
@@ -260,7 +260,7 @@ my_features <- c('year','drv','cyl','manufacturer')
 ``` r
 my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
 
-plot_cycle_col(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
+plot_cycle_cols(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
@@ -380,12 +380,12 @@ diamond_mat %>% bighead()
     ## # A tibble: 6 x 6
     ##   carat cut       color clarity depth table
     ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
-    ## 1 0.32  Very Good H     SI2     61.8  55.0 
-    ## 2 0.70  Very Good D     SI1     62.3  58.0 
-    ## 3 0.71  Premium   G     VS1     62.4  61.0 
-    ## 4 0.70  Ideal     F     VS1     62.4  56.0 
-    ## 5 0.71  Ideal     D     SI1     62.4  57.0 
-    ## 6 0.83  Premium   H     SI1     62.5  59.0
+    ## 1 0.79  Ideal     D     SI1     61.5  56.0 
+    ## 2 0.81  Ideal     F     SI2     62.6  55.0 
+    ## 3 0.70  Premium   E     VS2     61.4  59.0 
+    ## 4 0.70  Very Good F     VS2     59.5  58.0 
+    ## 5 0.80  Ideal     I     VS2     62.1  54.4 
+    ## 6 0.72  Good      G     VS2     59.7  60.5
 
 NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 

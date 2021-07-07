@@ -16,9 +16,9 @@
 #' my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
 #' my_features <- c('year','drv','cyl','manufacturer')
 #'
-#' plot_cycle_col(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
+#' plot_cycle_cols(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
 
-plot_cycle_col <- function(df, X,Y, myLabel, colour_vec ){
+plot_cycle_cols <- function(df, X,Y, myLabel, colour_vec ){
 
   require(tidyverse)
 

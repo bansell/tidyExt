@@ -194,20 +194,20 @@ Minimize keystrokes for common plot label and legend modifications
 
 <br>
 
-## bottom\_legend
+## bottom\_legend()
 
 ``` r
-sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend
+sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 <br>
 
-## no\_legend
+## no\_legend()
 
 ``` r
-sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend
+sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
@@ -238,7 +238,7 @@ my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
 
 my_df %>% gather(key,value,year,cyl,drv,manufacturer) %>% 
    ggplot(aes(cty,hwy,col=value)) + geom_point() + facet_wrap(~key,ncol=2) +
-   bottom_legend
+   bottom_legend()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
@@ -380,12 +380,12 @@ diamond_mat %>% bighead()
     ## # A tibble: 6 x 6
     ##   carat cut       color clarity depth table
     ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
-    ## 1 0.32  Very Good H     SI2     61.8  55.0 
-    ## 2 0.70  Very Good D     SI1     62.3  58.0 
-    ## 3 0.71  Premium   G     VS1     62.4  61.0 
-    ## 4 0.70  Ideal     F     VS1     62.4  56.0 
-    ## 5 0.71  Ideal     D     SI1     62.4  57.0 
-    ## 6 0.83  Premium   H     SI1     62.5  59.0
+    ## 1 0.23  Very Good E     VS1     59.5  58.0 
+    ## 2 0.82  Ideal     F     SI2     62.3  56.0 
+    ## 3 0.83  Ideal     F     SI2     62.3  55.0 
+    ## 4 0.75  Premium   E     SI1     61.1  59.0 
+    ## 5 0.71  Very Good G     VS1     63.3  59.0 
+    ## 6 0.78  Ideal     D     SI1     61.9  57.0
 
 NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 
