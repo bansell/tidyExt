@@ -1,6 +1,4 @@
 #' Select R color brewer palette and display swatch and hexcodes
-#'
-#'
 #' see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 #' @name brewer_GG_col
 #' @param my_palette An RColourBrewer palette name (see RColorBrewer::display.brewer.all()) .
@@ -18,7 +16,7 @@ brewer_GG_col <-  function(nColours = 4, my_palette = 'Paired', plot = T){
 #'
 #' @examples
 #'brewer_GG_col(6,'Blues')
-#'
+
 
 
 

@@ -2,7 +2,8 @@
 % Please edit documentation in R/brewer_GG_col.R
 \name{brewer_GG_col}
 \alias{brewer_GG_col}
-\title{Select R color brewer palette and display swatch and hexcodes}
+\title{Select R color brewer palette and display swatch and hexcodes
+see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}}
 \usage{
 brewer_GG_col(nColours = 4, my_palette = "Paired", plot = T)
 }
@@ -12,5 +13,6 @@ brewer_GG_col(nColours = 4, my_palette = "Paired", plot = T)
 \item{my_palette}{An RColourBrewer palette name (see RColorBrewer::display.brewer.all()) .}
 }
 \description{
+Select R color brewer palette and display swatch and hexcodes
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }

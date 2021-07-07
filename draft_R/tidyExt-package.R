@@ -56,7 +56,7 @@
 #' \code{\link{bottom_legend()}}
 #'}
 #'
-#' @title tidyExt
+#' @title tidyExt-package
 #' @docType package
 #' @name tidyExt
 NULL
