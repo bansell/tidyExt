@@ -2,8 +2,7 @@
 % Please edit documentation in R/fix_tidyverse_conflicts.R
 \name{fix_tidyverse_conflicts}
 \alias{fix_tidyverse_conflicts}
-\title{Fix tidyverse conflicts by exporting tidyverse functions to global environment.
-Author: Jacob Munro}
+\title{Fix tidyverse conflicts by exporting tidyverse functions to global environment}
 \usage{
 fix_tidyverse_conflicts()
 }
@@ -11,6 +10,6 @@ fix_tidyverse_conflicts()
 
 }
 \description{
-Fix tidyverse conflicts by exporting tidyverse functions to global environment.
+see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 Author: Jacob Munro
 }

@@ -6,11 +6,16 @@
 \usage{
 geom_boxdodge(..., point_size = 0.25, box_alpha = 0.5)
 }
+\arguments{
+\item{point_size}{size of points; default is 0.25}
+
+\item{box_alpha}{alpha for boxplot background ; default is 0.5}
+}
 \value{
 A ggplot.
 }
 \description{
-Create boxplots with multiple series on x axis, overlaid with datapoints, displaying exact y values and jittered x values.
+see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
 mpg \%>\% ggplot(aes(x=class, y=cty, col=factor(year))) +

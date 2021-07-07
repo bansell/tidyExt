@@ -13,7 +13,7 @@ scale_this(x)
 A vector of values scaled relative to their mean
 }
 \description{
-Scale column of data_frame without introducing a matrix. NB unlike scale(), this doesnt have an option to control centring.
+see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
 scale_this(iris$Sepal.Length)

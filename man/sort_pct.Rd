@@ -2,10 +2,10 @@
 % Please edit documentation in R/sort_pct.R
 \name{sort_pct}
 \alias{sort_pct}
-\title{Count any number of columns, print percentage and sort descending}
+\title{Count any number of columns, print percentage and sort descending.}
 \usage{
 sort_pct(.df, ...)
 }
 \description{
-Count any number of columns, print percentage and sort descending
+see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }

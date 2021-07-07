@@ -1,5 +1,7 @@
 
-#' Count any number of columns, print percentage and sort descending
+#' Count any number of columns, print percentage and sort descending.
+#'
+#' see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 
 #' @importFrom magrittr %>%
 #' @export

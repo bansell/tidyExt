@@ -2,15 +2,15 @@
 % Please edit documentation in R/geom_smooth_lm.R
 \name{geom_smooth_lm}
 \alias{geom_smooth_lm}
-\title{Adds a linear regression line to scatter plot and calls ggpubr to print the line equation and p value}
+\title{Adds a linear regression line to scatter plot and calls ggpubr to print the line equation and p value.}
 \usage{
-geom_smooth_lm(...)
+geom_smooth_lm(SE = T, p.colour = "black", ...)
 }
 \value{
 Returns a ggplot.
 }
 \description{
-Adds a linear regression line to scatter plot and calls ggpubr to print the line equation and p value
+see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
 mpg \%>\% ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()

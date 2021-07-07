@@ -2,15 +2,20 @@
 % Please edit documentation in R/geom_boxjitter.R
 \name{geom_boxjitter}
 \alias{geom_boxjitter}
-\title{Create boxplots overlaid with datapoints, displaying exact y values and jittered x values.}
+\title{Create boxplots overlaid with datapoints, displaying exact y values and jittered x values}
 \usage{
 geom_boxjitter(..., point_size = 0.5, point_col = "black", box_alpha = 1)
+}
+\arguments{
+\item{point_size}{size of points; default is 0.5}
+
+\item{box_alpha}{alpha for boxplot background ; default is 1}
 }
 \value{
 A ggplot.
 }
 \description{
-Create boxplots overlaid with datapoints, displaying exact y values and jittered x values.
+see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
 mpg \%>\% ggplot(aes(x=class, y=cty)) +

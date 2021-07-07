@@ -2,15 +2,15 @@
 % Please edit documentation in R/brewer_GG_col.R
 \name{brewer_GG_col}
 \alias{brewer_GG_col}
-\title{Select R color brewer palette of type my_palette with nCols n colours}
+\title{Select R color brewer palette and display swatch and hexcodes}
 \usage{
 brewer_GG_col(nColours = 4, my_palette = "Paired", plot = T)
 }
 \arguments{
 \item{nColours}{Number of colours to select from palette. These will be evenly spaced across palette.}
 
-\item{my_palette}{An RColourBrewer palette name (see RColorBrewer::display.brewer.all())}
+\item{my_palette}{An RColourBrewer palette name (see RColorBrewer::display.brewer.all()) .}
 }
 \description{
-Select R color brewer palette of type my_palette with nCols n colours
+see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }

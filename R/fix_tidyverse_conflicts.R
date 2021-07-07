@@ -1,5 +1,7 @@
 
-#' Fix tidyverse conflicts by exporting tidyverse functions to global environment.
+#' Fix tidyverse conflicts by exporting tidyverse functions to global environment
+#'
+#' see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 #' Author: Jacob Munro
 #' @return
 #' @export

@@ -1,6 +1,9 @@
 
-#' Recycle color scales over multiple scatter plots. Use cases include PCA / MDS plots with multiple factors.
+#' Recycle color scales over multiple scatter plots
 #'
+#' Use cases include PCA / MDS plots with multiple factors
+#'
+#' see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 #' @param df data frame
 #' @param X x axis mapping
 #' @param Y y axis mapping

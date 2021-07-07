@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_cycle_col.R
 \name{plot_cycle_col}
 \alias{plot_cycle_col}
-\title{Recycle color scales over multiple scatter plots. Use cases include PCA / MDS plots with multiple factors.}
+\title{Recycle color scales over multiple scatter plots}
 \usage{
 plot_cycle_col(df, X, Y, myLabel, colour_vec)
 }
@@ -21,7 +21,10 @@ plot_cycle_col(df, X, Y, myLabel, colour_vec)
 
 }
 \description{
-Recycle color scales over multiple scatter plots. Use cases include PCA / MDS plots with multiple factors.
+Use cases include PCA / MDS plots with multiple factors
+}
+\details{
+see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
 my_df <- mpg \%>\% mutate(year=factor(year), cyl=factor(cyl))
