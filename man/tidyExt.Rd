@@ -13,9 +13,13 @@ overcome some common pain-points in plotting, data summarization and environment
 
 \strong{Functions for managing source code and global environment}
 \itemize{
-\code{\link{ printScriptDir }}
+\code{\link{tidyExt::printScriptDir }}
 
-\code{\link{ fix_tidyverse_conflicts }}
+\code{\link{tidyExt::printScriptDir()}}
+
+\code{\link{tidyExt::printScriptDir}}
+
+\code{\link{ tidyExt::fix_tidyverse_conflicts() }}
 }
 
 \strong{ Data view helpers}
