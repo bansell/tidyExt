@@ -6,11 +6,11 @@
 #
 #' \strong{Functions for managing source code and global environment}
 #' \itemize{
-#'\code{\link{printScriptDir }}
+#'\code{\link{ printScriptDir }}
 #'
-#'\code{\link{printScriptDir()}}
+#'\code{\link{ printScriptDir()}}
 #'
-#'\code{\link{printScriptDir}}
+#'\code{\link{ printScriptDir}}
 #'
 #'\code{\link[ggpubr]{stat_cor}}
 #'
