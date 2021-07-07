@@ -13,11 +13,11 @@ overcome some common pain-points in plotting, data summarization and environment
 
 \strong{Functions for managing source code and global environment}
 \itemize{
-\code{\link{printScriptDir }}
+\code{\link{ printScriptDir }}
 
-\code{\link{printScriptDir()}}
+\code{\link{ printScriptDir()}}
 
-\code{\link{printScriptDir}}
+\code{\link{ printScriptDir}}
 
 \code{\link[ggpubr]{stat_cor}}
 
@@ -40,7 +40,7 @@ overcome some common pain-points in plotting, data summarization and environment
 
 \strong{Faceted scatterplot colour recycling}
 \itemize{
-\code{\link{ plot_cycle_col() }}
+\code{\link{ plot_cycle_cols() }}
 }
 
 \strong{GGplot2 colour helpers}
