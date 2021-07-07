@@ -19,6 +19,8 @@ overcome some common pain-points in plotting, data summarization and environment
 
 \code{\link{tidyExt::printScriptDir}}
 
+\code{\link[ggpubr]{stat_cor}}
+
 \code{\link{ tidyExt::fix_tidyverse_conflicts() }}
 }
 
