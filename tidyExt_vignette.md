@@ -380,12 +380,12 @@ diamond_mat %>% bighead()
     ## # A tibble: 6 x 6
     ##   carat cut       color clarity depth table
     ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
-    ## 1 0.79  Ideal     D     SI1     61.5  56.0 
-    ## 2 0.81  Ideal     F     SI2     62.6  55.0 
-    ## 3 0.70  Premium   E     VS2     61.4  59.0 
-    ## 4 0.70  Very Good F     VS2     59.5  58.0 
-    ## 5 0.80  Ideal     I     VS2     62.1  54.4 
-    ## 6 0.72  Good      G     VS2     59.7  60.5
+    ## 1 1.01  Premium   I     SI1     62.7  60.0 
+    ## 2 0.81  Very Good E     SI2     62.4  57.0 
+    ## 3 0.70  Very Good D     VS2     61.8  55.0 
+    ## 4 0.72  Very Good F     VS2     63.0  54.0 
+    ## 5 0.74  Very Good E     VS1     63.1  58.0 
+    ## 6 0.70  Very Good E     SI1     63.5  59.0
 
 NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 

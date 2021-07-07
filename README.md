@@ -104,7 +104,7 @@ mpg %>% ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
 
 …sorry. Here are some useful statistics shortcuts: <br>
 
-## smooth\_lm()
+## geom\_smooth\_lm()
 
 Adds a linear regression line to scatter plot and calls ggpubr to print
 the line equation and p value
@@ -226,7 +226,7 @@ mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
 
 <br>
 
-## plot\_cycle\_col()
+## plot\_cycle\_cols()
 
 This function is useful when you want to make scatterplots (for example,
 PCA plots) coloured by multiple different factors. The colour space is
@@ -260,7 +260,7 @@ my_features <- c('year','drv','cyl','manufacturer')
 ``` r
 my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
 
-plot_cycle_col(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
+plot_cycle_cols(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
@@ -380,12 +380,12 @@ diamond_mat %>% bighead()
     ## # A tibble: 6 x 6
     ##   carat cut       color clarity depth table
     ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
-    ## 1 0.23  Very Good E     VS1     59.5  58.0 
-    ## 2 0.82  Ideal     F     SI2     62.3  56.0 
-    ## 3 0.83  Ideal     F     SI2     62.3  55.0 
-    ## 4 0.75  Premium   E     SI1     61.1  59.0 
-    ## 5 0.71  Very Good G     VS1     63.3  59.0 
-    ## 6 0.78  Ideal     D     SI1     61.9  57.0
+    ## 1 0.79  Ideal     D     SI1     61.5  56.0 
+    ## 2 0.81  Ideal     F     SI2     62.6  55.0 
+    ## 3 0.70  Premium   E     VS2     61.4  59.0 
+    ## 4 0.70  Very Good F     VS2     59.5  58.0 
+    ## 5 0.80  Ideal     I     VS2     62.1  54.4 
+    ## 6 0.72  Good      G     VS2     59.7  60.5
 
 NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 
