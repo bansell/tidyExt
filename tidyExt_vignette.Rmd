@@ -244,7 +244,7 @@ diamond_mat <- as.matrix(diamonds[sample(1000), ])
 
 diamond_mat %>% bighead()
 ```
-NB this will return an 8x8 data frame as default when run in .R or .Rmd.
+NB this will return an 8x8 data frame as default when called from the console, an .R or .Rmd file.
 
 <br>
 
@@ -255,7 +255,7 @@ The default console output for tidyverse tables is to display 6 rows of data. Us
 ```{r, eval=F}
 mpg %>% print_all()
 ```
-NB Not run here. This will print the entire table to the console when called from the console, a .R or .Rmd file.
+NB Not run here. This will print the entire table to the console when called from the console, an .R or .Rmd file.
 
 <br>
 
@@ -265,7 +265,6 @@ We hope these functions are useful for making your daily R coding work quicker a
 
 <br>
 <br>
-
 
 <a href="https://www.buymeacoffee.com/bansell" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 

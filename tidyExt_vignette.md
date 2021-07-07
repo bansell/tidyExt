@@ -378,16 +378,17 @@ diamond_mat %>% bighead()
 ```
 
     ## # A tibble: 6 x 6
-    ##   carat cut     color clarity depth table
-    ##   <chr> <chr>   <chr> <chr>   <chr> <chr>
-    ## 1 0.96  Fair    F     SI2     68.2  61.0 
-    ## 2 0.30  Premium H     SI1     62.5  57.0 
-    ## 3 0.79  Ideal   I     VS1     61.8  59.0 
-    ## 4 1.01  Fair    E     SI2     67.6  57.0 
-    ## 5 0.76  Ideal   G     VS2     61.3  56.0 
-    ## 6 0.89  Premium H     SI2     60.2  59.0
+    ##   carat cut       color clarity depth table
+    ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
+    ## 1 0.64  Ideal     G     VVS1    61.9  56.0 
+    ## 2 0.76  Premium   E     SI1     61.8  58.0 
+    ## 3 0.70  Ideal     D     SI1     59.7  58.0 
+    ## 4 0.25  Very Good E     VS2     63.3  60.0 
+    ## 5 0.32  Ideal     I     VVS1    62.0  55.3 
+    ## 6 0.70  Ideal     D     SI1     61.0  59.0
 
-NB this will return an 8x8 data frame as default when run in .R or .Rmd.
+NB this will return an 8x8 data frame as default when called from the
+console, an .R or .Rmd file.
 
 <br>
 
@@ -403,7 +404,7 @@ mpg %>% print_all()
 ```
 
 NB Not run here. This will print the entire table to the console when
-called from the console, a .R or .Rmd file.
+called from the console, an .R or .Rmd file.
 
 <br>
 
@@ -411,6 +412,8 @@ called from the console, a .R or .Rmd file.
 
 We hope these functions are useful for making your daily R coding work
 quicker and easier! Please don’t hesitate to modify for your own use or
-suggest updates through github. <br> <br>
+suggest updates through github.
+
+<br> <br>
 
 <a href="https://www.buymeacoffee.com/bansell" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>

@@ -380,12 +380,12 @@ diamond_mat %>% bighead()
     ## # A tibble: 6 x 6
     ##   carat cut       color clarity depth table
     ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
-    ## 1 0.34  Ideal     I     VS1     61.8  55.0 
-    ## 2 0.70  Very Good F     VS2     61.7  63.0 
-    ## 3 0.90  Fair      I     SI1     65.3  61.0 
-    ## 4 0.70  Premium   D     SI1     60.2  60.0 
-    ## 5 0.71  Premium   D     SI1     61.7  56.0 
-    ## 6 0.71  Ideal     F     VS2     61.2  56.0
+    ## 1 0.71  Good      D     VS1     63.4  55.0 
+    ## 2 0.76  Premium   E     SI1     62.2  59.0 
+    ## 3 0.75  Very Good F     SI2     59.8  56.0 
+    ## 4 0.71  Ideal     G     VS1     62.9  58.0 
+    ## 5 0.80  Ideal     G     SI1     62.5  57.0 
+    ## 6 0.83  Very Good I     VS1     61.1  60.0
 
 NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 
@@ -403,7 +403,7 @@ mpg %>% print_all()
 ```
 
 NB Not run here. This will print the entire table to the console when
-called from the console, a .R or .Rmd file.
+called from the console, an .R or .Rmd file.
 
 <br>
 
@@ -411,6 +411,8 @@ called from the console, a .R or .Rmd file.
 
 We hope these functions are useful for making your daily R coding work
 quicker and easier! Please don’t hesitate to modify for your own use or
-suggest updates through github. <br>
+suggest updates through github.
+
+<br> <br>
 
 <a href="https://www.buymeacoffee.com/bansell" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
