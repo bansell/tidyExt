@@ -378,14 +378,14 @@ diamond_mat %>% bighead()
 ```
 
     ## # A tibble: 6 x 6
-    ##   carat cut       color clarity depth table
-    ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
-    ## 1 1.01  Premium   I     SI1     62.7  60.0 
-    ## 2 0.81  Very Good E     SI2     62.4  57.0 
-    ## 3 0.70  Very Good D     VS2     61.8  55.0 
-    ## 4 0.72  Very Good F     VS2     63.0  54.0 
-    ## 5 0.74  Very Good E     VS1     63.1  58.0 
-    ## 6 0.70  Very Good E     SI1     63.5  59.0
+    ##   carat cut     color clarity depth table
+    ##   <chr> <chr>   <chr> <chr>   <chr> <chr>
+    ## 1 0.96  Fair    F     SI2     68.2  61.0 
+    ## 2 0.30  Premium H     SI1     62.5  57.0 
+    ## 3 0.79  Ideal   I     VS1     61.8  59.0 
+    ## 4 1.01  Fair    E     SI2     67.6  57.0 
+    ## 5 0.76  Ideal   G     VS2     61.3  56.0 
+    ## 6 0.89  Premium H     SI2     60.2  59.0
 
 NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 
@@ -411,4 +411,6 @@ called from the console, a .R or .Rmd file.
 
 We hope these functions are useful for making your daily R coding work
 quicker and easier! Please don’t hesitate to modify for your own use or
-suggest updates through github.
+suggest updates through github. <br> <br>
+
+<a href="https://www.buymeacoffee.com/bansell" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>

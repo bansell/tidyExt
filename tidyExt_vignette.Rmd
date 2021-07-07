@@ -263,6 +263,12 @@ NB Not run here. This will print the entire table to the console when called fro
 
 We hope these functions are useful for making your daily R coding work quicker and easier! Please don't hesitate to modify for your own use or suggest updates through github.
 
+<br>
+<br>
+
+
+<a href="https://www.buymeacoffee.com/bansell" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 
 ```{r,include=F}
  system('bash update_readme.sh')
