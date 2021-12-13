@@ -33,7 +33,7 @@ Load tidyverse and tidyExt:
 
 ```{r,message=F}
 library(tidyverse)
-library(tidyExt)
+library(tidyExt, lib.loc = )
 ```
 
 ```{r,echo=F,include=F}
@@ -51,6 +51,7 @@ To manage source code files across multiple systems and folders, it can be usefu
 
 ```{r}
 printScriptDir() 
+
 ```
 
 NB run from your .R or .Rmd file, this function will not return the characters "## [1]  " in the console.
@@ -95,7 +96,7 @@ mpg %>% ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
 ...sorry. Here are some useful statistics shortcuts:
 <br>
 
-## geom_smooth_lm()
+## smooth_lm()
 
 Adds a linear regression line to scatter plot and calls ggpubr to print the line equation and p value
 ```{r, warning=F}
@@ -145,17 +146,17 @@ Minimize keystrokes for common plot label and legend modifications
 
 <br>
 
-## bottom_legend()
+## bottom_legend
 ```{r}
-sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend()
+sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend
 ```
 
 <br>
 
-## no_legend()
+## no_legend
 
 ```{r}
-sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend()
+sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend
 ```
 
 <br>
@@ -170,7 +171,7 @@ mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
 
 <br>
 
-## plot_cycle_cols()
+## plot_cycle_col()
 
 This function is useful when you want to make scatterplots (for example, PCA plots) coloured by multiple different factors. The colour space is rapidly exhausted and important plotting information is lost. For example:
 
@@ -180,7 +181,7 @@ my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
 
 my_df %>% gather(key,value,year,cyl,drv,manufacturer) %>% 
    ggplot(aes(cty,hwy,col=value)) + geom_point() + facet_wrap(~key,ncol=2) +
-   bottom_legend()
+   bottom_legend
 ```
 
 It is very hard to distinguish the data from years 1999 vs 2008, and the figure legend is a jumble of labels from all facets.
@@ -195,7 +196,7 @@ my_features <- c('year','drv','cyl','manufacturer')
 ```{r, fig.height=10,fig.width=8}
 my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
 
-plot_cycle_cols(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
+plot_cycle_col(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
 
 ```
 
@@ -244,7 +245,7 @@ diamond_mat <- as.matrix(diamonds[sample(1000), ])
 
 diamond_mat %>% bighead()
 ```
-NB this will return an 8x8 data frame as default when called from the console, an .R or .Rmd file.
+NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 
 <br>
 
@@ -255,18 +256,13 @@ The default console output for tidyverse tables is to display 6 rows of data. Us
 ```{r, eval=F}
 mpg %>% print_all()
 ```
-NB Not run here. This will print the entire table to the console when called from the console, an .R or .Rmd file.
+NB Not run here. This will print the entire table to the console when called from the console, a .R or .Rmd file.
 
 <br>
 
 # Summary
 
 We hope these functions are useful for making your daily R coding work quicker and easier! Please don't hesitate to modify for your own use or suggest updates through github.
-
-<br>
-<br>
-
-<a href="https://www.buymeacoffee.com/bansell" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 
 ```{r,include=F}

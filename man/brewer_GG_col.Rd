@@ -5,12 +5,22 @@
 \title{Select R color brewer palette and display swatch and hexcodes
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}}
 \usage{
-brewer_GG_col(nColours = 4, my_palette = "Paired", plot = T)
+brewer_GG_col(
+  nColours = 4,
+  my_palette = "Paired",
+  type = "div",
+  nExtendColours = nColours,
+  plot = T
+)
 }
 \arguments{
 \item{nColours}{Number of colours to select from palette. These will be evenly spaced across palette.}
 
-\item{my_palette}{An RColourBrewer palette name (see RColorBrewer::display.brewer.all()) .}
+\item{my_palette}{An RColourBrewer palette name (see RColorBrewer::display.brewer.all())}
+
+\item{nExtendColours}{If more colours are desired than are available in the standard palette, specify total colours here.}
+
+\item{plott}{Default will plot the colour palette with the hex codes overlaid.}
 }
 \description{
 Select R color brewer palette and display swatch and hexcodes
