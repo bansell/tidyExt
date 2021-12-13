@@ -1,16 +1,10 @@
-
-#' Fix tidyverse conflicts by exporting tidyverse functions to global environment
-#'
-#' see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
-#' Author: Jacob Munro
-#' @return
 #' @export
-#'
-#'
-#'
 fix_tidyverse_conflicts <- function() {
   tidyverse::tidyverse_conflicts() %>%
     purrr::map2_df(., names(.), ~ dplyr::tibble(fun = .y, masker = .x[1], maskee = list(.x[-1]))) %>%
+    dplyr::mutate(fun = dplyr::if_else(stringr::str_detect(fun, '^%.+%$'),
+                                       stringr::str_c('`', fun, '`'),
+                                       fun)) %>%
     {
       if(nrow(.)) {
         tidyr::unnest(., maskee) %>%
