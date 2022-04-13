@@ -1,4 +1,6 @@
-#quote_this
+#' Quote this
+#' @name quote_this
+#' @export
 
 #takes a chunk of text and converts to vector values. runs scan() under the hood
 #TBC: ideally split on any delim/white space as determined by user.
