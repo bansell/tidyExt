@@ -4,7 +4,7 @@
 \alias{geom_origin}
 \title{Geom origin}
 \usage{
-geom_origin(...)
+geom_origin(lty = 2, ...)
 }
 \description{
 Geom origin

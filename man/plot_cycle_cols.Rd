@@ -17,9 +17,6 @@ plot_cycle_cols(df, X, Y, myLabel, colour_vec)
 
 \item{colour_vec}{vector of values to colour points by.}
 }
-\value{
-
-}
 \description{
 Use cases include PCA / MDS plots with multiple factors
 }
