@@ -4,12 +4,25 @@
 \alias{geom_boxjitter}
 \title{Create boxplots overlaid with datapoints, displaying exact y values and jittered x values}
 \usage{
-geom_boxjitter(..., point_size = 0.5, point_col = "black", box_alpha = 1)
+geom_boxjitter(
+  ...,
+  point_size = 0.5,
+  point_col = "black",
+  box_alpha = 1,
+  height = 0,
+  width = 0.25
+)
 }
 \arguments{
 \item{point_size}{size of points; default is 0.5}
 
+\item{point_col}{point colour; default is black}
+
 \item{box_alpha}{alpha for boxplot background ; default is 1}
+
+\item{height}{jitter height; default is 0}
+
+\item{width}{jitter width; default is 0.25}
 }
 \value{
 A ggplot.
