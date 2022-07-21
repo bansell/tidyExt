@@ -9,8 +9,8 @@ geom_boxjitter(
   point_size = 0.5,
   point_col = "black",
   box_alpha = 1,
-  height = 0,
-  width = 0.25
+  jitterheight = 0,
+  jitterwidth = 0.25
 )
 }
 \arguments{
@@ -20,9 +20,9 @@ geom_boxjitter(
 
 \item{box_alpha}{alpha for boxplot background ; default is 1}
 
-\item{height}{jitter height; default is 0}
+\item{jitterheight}{jitter height; default is 0}
 
-\item{width}{jitter width; default is 0.25}
+\item{jitterwidth}{jitter width; default is 0.25}
 }
 \value{
 A ggplot.
