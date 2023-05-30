@@ -2,24 +2,19 @@
 % Please edit documentation in R/recip_table.R
 \name{recip_table}
 \alias{recip_table}
-\title{Reciprocal table function: quantifies the intersect of unique occurrences between two vectors}
+\title{Count number of unique elements shared between two vectors. Option to check whether element order is identical.}
 \usage{
-recip_table(x_vec, y_vec)
+recip_table(x_vec, y_vec, check_order = F)
 }
 \arguments{
-\item{x_vec}{vector of values}
+\item{x_vec}{vector of elements of any type}
 
-\item{y_vec}{vector of values}
+\item{y_vec}{vector of elements of any type}
 }
 \value{
-A tibble.
+A tibble, and an optional message.
 }
 \description{
-Reciprocal table function: quantifies the intersect of unique occurrences between two vectors
-}
-\examples{
-recip_table(mtcars$mpg,mtcars$mpg[1:5])
-recip_table(mtcars$mpg[1:5], mtcars$mpg)
-recip_table(mtcars$mpg, mtcars$mpg)
-recip_table(mtcars$mpg, mtcars$cyl)
+see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
+This function requires tidyExt::recip_order() to be loaded.
 }
