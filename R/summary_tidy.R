@@ -1,4 +1,5 @@
-#' Table output for baseR summary() function.
+#' Tibble output for baseR summary() function.
+#'
 #' Default is to return summary stats for all columns containing continuous data.
 #' Option to specify categorical data.
 #'
@@ -8,7 +9,7 @@
 #' mpg %>% summary_tidy(data_type = 'cont')
 #' mpg %>% summary_tidy(data_type = 'categ')
 
-
+#' @export
 summary_tidy <- function(tibble, data_type = "cont"){
 
   not_any_na <- function(y) all(!is.na(y))

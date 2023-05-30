@@ -9,8 +9,7 @@
 #' @param Y y axis mapping
 #' @param myLabel TBC: labelling functionality
 #' @param colour_vec vector of values to colour points by.
-#' @return
-#' @export
+#' @return cowplot list of ggplots
 #'
 #' @examples
 #' my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
@@ -18,6 +17,7 @@
 #'
 #' plot_cycle_cols(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
 
+#' @export
 plot_cycle_cols <- function(df, X,Y, myLabel, colour_vec ){
 
   require(tidyverse)

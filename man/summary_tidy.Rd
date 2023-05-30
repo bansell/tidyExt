@@ -2,9 +2,7 @@
 % Please edit documentation in R/summary_tidy.R
 \name{summary_tidy}
 \alias{summary_tidy}
-\title{Table output for baseR summary() function.
-Default is to return summary stats for all columns containing continuous data.
-Option to specify categorical data.}
+\title{Tibble output for baseR summary() function.}
 \usage{
 summary_tidy(tibble, data_type = "cont")
 }
@@ -12,7 +10,6 @@ summary_tidy(tibble, data_type = "cont")
 A tibble.
 }
 \description{
-Table output for baseR summary() function.
 Default is to return summary stats for all columns containing continuous data.
 Option to specify categorical data.
 }

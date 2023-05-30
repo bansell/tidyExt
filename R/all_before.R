@@ -1,4 +1,6 @@
-#' Shortcuts for stringr regex. Identifies substring occuring before or after character.
+#'Shortcuts for stringr regex.
+#'
+#' Identifies substring occuring before or after character.
 #' Note: these are technically all_after_last() and all_before_first() occurances.
 #' see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 #'
@@ -23,8 +25,6 @@
 
 
 #' @export
-
-all_after <-  function(character){glue::glue('[^{character}]*$')}
 all_before <- function(character){glue::glue('[^{character}]+')}
 
 
