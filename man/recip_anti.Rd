@@ -17,3 +17,6 @@ A tibble.
 \description{
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
+\examples{
+recip_anti(x_vec= c('apple', 'banana','pear'), y_vec = c('banana','peach'))
+}

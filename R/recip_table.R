@@ -7,6 +7,12 @@
 #' @param x_vec vector of elements of any type
 #' @param y_vec vector of elements of any type
 
+#' @examples
+#' recip_table(mtcars$mpg, mtcars$mpg[1:5])
+#' recip_table(mtcars$mpg, sort(mtcars$mpg), check_order = T)
+#' recip_table(mtcars$mpg[1:5], mtcars$mpg)
+#' recip_table(mtcars$mpg, mtcars$mpg)
+#' recip_table(mtcars$mpg, mtcars$cyl)
 
 #' @export
 recip_table <- function(x_vec, y_vec, check_order=F){
@@ -41,12 +47,6 @@ recip_table <- function(x_vec, y_vec, check_order=F){
 
 }
 
-#' @examples
-#' recip_table(mtcars$mpg, mtcars$mpg[1:5])
-#' recip_table(mtcars$mpg, sort(mtcars$mpg), check_order = T)
-#' recip_table(mtcars$mpg[1:5], mtcars$mpg)
-#' recip_table(mtcars$mpg, mtcars$mpg)
-#' recip_table(mtcars$mpg, mtcars$cyl)
 
 
 

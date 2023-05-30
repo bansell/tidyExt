@@ -18,3 +18,10 @@ A tibble, and an optional message.
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 This function requires tidyExt::recip_order() to be loaded.
 }
+\examples{
+recip_table(mtcars$mpg, mtcars$mpg[1:5])
+recip_table(mtcars$mpg, sort(mtcars$mpg), check_order = T)
+recip_table(mtcars$mpg[1:5], mtcars$mpg)
+recip_table(mtcars$mpg, mtcars$mpg)
+recip_table(mtcars$mpg, mtcars$cyl)
+}

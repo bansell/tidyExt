@@ -7,6 +7,11 @@
 #' @param x_vec vector of elements of any type.
 #' @param y_vec vector of elements of any type.
 
+#' @examples
+#' recip_order(mtcars$mpg,mtcars$mpg)
+#' recip_order(mtcars$mpg,sort(mtcars$mpg))
+#' recip_order(mtcars$mpg,mtcars$mpg[1:5])
+
 
 #' @export
 recip_order <- function(x_vec, y_vec) {
@@ -27,8 +32,3 @@ recip_order <- function(x_vec, y_vec) {
 
 }
 
-#' @examples
-#' all.equal(sort(mtcars$mpg),sort(mtcars$mpg[1:5]))
-#' recip_order(mtcars$mpg,mtcars$mpg)
-#' recip_order(mtcars$mpg,sort(mtcars$mpg))
-#' recip_order(mtcars$mpg,mtcars$mpg[1:5])

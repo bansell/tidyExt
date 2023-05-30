@@ -2,10 +2,15 @@
 % Please edit documentation in R/quote_this.R
 \name{quote_this}
 \alias{quote_this}
-\title{Quote this}
+\title{Quote this. Converts a long quoted string to separate elements in a vector.
+Runs scan() under the hood}
 \usage{
 quote_this(x, what = " ")
 }
 \description{
-Quote this
+Quote this. Converts a long quoted string to separate elements in a vector.
+Runs scan() under the hood
+}
+\examples{
+quote_this('apple pear banana')
 }

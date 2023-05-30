@@ -2,10 +2,19 @@
 % Please edit documentation in R/geom_origin.R
 \name{geom_origin}
 \alias{geom_origin}
-\title{Geom origin}
+\title{Geom origin. Draw x-y crosshair through the origin.}
 \usage{
-geom_origin(lty = 2, ...)
+geom_origin(lty = 2, xorig = 0, yorig = 0, ...)
+}
+\arguments{
+\item{xorig}{intercept for x axis}
+
+\item{yorig}{intercept for y axis}
 }
 \description{
-Geom origin
+Geom origin. Draw x-y crosshair through the origin.
+}
+\examples{
+df <- tibble(x=rnorm(50),y=rnorm(50))
+ggplot(df, aes(x=x,y=y)) + geom_point() + geom_origin()
 }

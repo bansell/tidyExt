@@ -6,6 +6,8 @@
 #' @param x_vec vector of elements of any type
 #' @param y_vec vector of elements of any type
 
+#' @examples
+#' recip_anti(x_vec= c('apple', 'banana','pear'), y_vec = c('banana','peach'))
 
 #' @export
 recip_anti <- function(x_vec, y_vec){
@@ -38,6 +40,3 @@ if(!(length(res_a)>0 | length(res_b)>0)) {
 }
 
 }
-
-#' @examples
-#' recip_anti(x_vec= c('apple', 'banana','pear'), y_vec = c('banana','peach'))

@@ -17,3 +17,8 @@ A message.
 \description{
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
+\examples{
+recip_order(mtcars$mpg,mtcars$mpg)
+recip_order(mtcars$mpg,sort(mtcars$mpg))
+recip_order(mtcars$mpg,mtcars$mpg[1:5])
+}
