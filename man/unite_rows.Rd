@@ -7,15 +7,15 @@
 unite_rows(.data, input_colname, output_colname, group_var, delim = ";")
 }
 \arguments{
-\item{.data}{A tibble}
+\item{.data}{A tibble.}
 
-\item{input_colname}{The column name to collapse into rows}
+\item{input_colname}{The column name to collapse into rows.}
 
-\item{output_colname}{The new column name to contain collapsed data}
+\item{output_colname}{The new column name to contain collapsed data.}
 
-\item{group_var}{Any number of grouping columns}
+\item{group_var}{Any number of grouping columns.}
 
-\item{delim}{delimeter for collapsed data}
+\item{delim}{Delimeter for collapsed data.}
 }
 \value{
 If no groups are specified, returns a vector; else returns an ungrouped dataframe.

@@ -48,14 +48,14 @@ working in, without quotes for quick copy/paste.
 printScriptDir() 
 ```
 
-    ## [1] "~/Git/tidyExt/tidyExt_vignette.Rmd"
+    ## [1] ""
 
 NB run from your .R or .Rmd file, this function will not return the
-characters “\#\# \[1\]” in the console.
+characters “\## \[1\]” in the console.
 
 <br>
 
-## fix\_tidyverse\_conflicts()
+## fix_tidyverse_conflicts()
 
 Certain tidyverse functions like rename() and select() often conflict
 with function names from other packages. If many packages are loaded, to
@@ -72,7 +72,7 @@ fix_tidyverse_conflicts()
 
 <br>
 
-## geom\_boxjitter()
+## geom_boxjitter()
 
 Make boxplots with overlaid datapoints. There is no jitter in the y axis
 in order to accurately represent data values.
@@ -86,7 +86,7 @@ mpg %>% ggplot(aes(x=class, y=cty)) +
 
 <br>
 
-## geom\_boxdodge()
+## geom_boxdodge()
 
 Make nested boxplots with overlaid datapoints. There is no jitter in the
 y axis in order to accurately represent data values.
@@ -104,7 +104,7 @@ mpg %>% ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
 
 …sorry. Here are some useful statistics shortcuts: <br>
 
-## geom\_smooth\_lm()
+## smooth_lm()
 
 Adds a linear regression line to scatter plot and calls ggpubr to print
 the line equation and p value
@@ -113,13 +113,13 @@ the line equation and p value
 mpg %>% ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
 ```
 
-    ## `geom_smooth()` using formula 'y ~ x'
+    ## `geom_smooth()` using formula = 'y ~ x'
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 <br>
 
-## scale\_this()
+## scale_this()
 
 A wrapper for scale() that returns a single vector to use within
 `dplyr::mutate()` etc. This function is copied from
@@ -136,7 +136,7 @@ diamonds %>% mutate(table_scale = scale(table)) %>% select(table_scale) %>% str(
     ##   ..- attr(*, "scaled:center")= num 57.5
     ##   ..- attr(*, "scaled:scale")= num 2.23
 
-scale\_this() output:
+scale_this() output:
 
 ``` r
 diamonds %>% mutate(table_scale = scale_this(table)) %>% select(table_scale) %>% str()
@@ -147,7 +147,7 @@ diamonds %>% mutate(table_scale = scale_this(table)) %>% select(table_scale) %>%
 
 <br>
 
-## sort\_pct()
+## sort_pct()
 
 A way to simultaneously count and sort the relative proportion of
 character data in descending order. Simple example:
@@ -156,7 +156,7 @@ character data in descending order. Simple example:
 diamonds %>% sort_pct(cut)
 ```
 
-    ## # A tibble: 5 x 3
+    ## # A tibble: 5 × 3
     ##   cut           n    pct
     ##   <ord>     <int>  <dbl>
     ## 1 Ideal     21551 0.400 
@@ -171,7 +171,7 @@ More complex:
 diamonds %>% sort_pct(cut,color)
 ```
 
-    ## # A tibble: 35 x 4
+    ## # A tibble: 35 × 4
     ##    cut       color     n    pct
     ##    <ord>     <ord> <int>  <dbl>
     ##  1 Ideal     G      4884 0.0905
@@ -184,7 +184,7 @@ diamonds %>% sort_pct(cut,color)
     ##  8 Premium   H      2360 0.0438
     ##  9 Premium   E      2337 0.0433
     ## 10 Premium   F      2331 0.0432
-    ## # … with 25 more rows
+    ## # ℹ 25 more rows
 
 <br>
 
@@ -194,7 +194,7 @@ Minimize keystrokes for common plot label and legend modifications
 
 <br>
 
-## bottom\_legend()
+## bottom_legend
 
 ``` r
 sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend()
@@ -204,7 +204,7 @@ sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_poi
 
 <br>
 
-## no\_legend()
+## no_legend
 
 ``` r
 sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend()
@@ -214,7 +214,7 @@ sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_poi
 
 <br>
 
-## x\_angle()
+## x_angle()
 
 Set x labels at any angle. 30° by default.
 
@@ -226,7 +226,7 @@ mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
 
 <br>
 
-## plot\_cycle\_cols()
+## plots()
 
 This function is useful when you want to make scatterplots (for example,
 PCA plots) coloured by multiple different factors. The colour space is
@@ -275,7 +275,7 @@ selected colours, from default ggplot2 or RColorBrewer palettes.
 
 <br>
 
-## default\_GG\_col()
+## default_GG_col()
 
 ``` r
 default_GG_col(12)
@@ -288,7 +288,7 @@ default_GG_col(12)
 
 <br>
 
-## brewer\_GG\_col()
+## brewer_GG_col()
 
 First check out the palette information to see all of the available
 Brewer palettes.
@@ -377,22 +377,21 @@ diamond_mat <- as.matrix(diamonds[sample(1000), ])
 diamond_mat %>% bighead()
 ```
 
-    ## # A tibble: 6 x 6
-    ##   carat cut       color clarity depth table
-    ##   <chr> <chr>     <chr> <chr>   <chr> <chr>
-    ## 1 0.64  Ideal     G     VVS1    61.9  56.0 
-    ## 2 0.76  Premium   E     SI1     61.8  58.0 
-    ## 3 0.70  Ideal     D     SI1     59.7  58.0 
-    ## 4 0.25  Very Good E     VS2     63.3  60.0 
-    ## 5 0.32  Ideal     I     VVS1    62.0  55.3 
-    ## 6 0.70  Ideal     D     SI1     61.0  59.0
+    ## # A tibble: 6 × 6
+    ##   carat cut     color clarity depth table
+    ##   <chr> <chr>   <chr> <chr>   <chr> <chr>
+    ## 1 0.30  Ideal   D     SI1     62.5  57.0 
+    ## 2 0.80  Ideal   H     VS2     62.8  57.0 
+    ## 3 0.71  Ideal   E     VS2     62.7  57.0 
+    ## 4 0.52  Ideal   F     VVS1    61.3  55.0 
+    ## 5 0.71  Premium D     VS2     60.4  62.0 
+    ## 6 0.53  Ideal   F     VVS1    60.9  57.0
 
-NB this will return an 8x8 data frame as default when called from the
-console, an .R or .Rmd file.
+NB this will return an 8x8 data frame as default when run in .R or .Rmd.
 
 <br>
 
-## print\_all()
+## print_all()
 
 The default console output for tidyverse tables is to display 6 rows of
 data. Use `print_all()` to output the entire table in the console. This
@@ -404,7 +403,7 @@ mpg %>% print_all()
 ```
 
 NB Not run here. This will print the entire table to the console when
-called from the console, an .R or .Rmd file.
+called from the console, a .R or .Rmd file.
 
 <br>
 
@@ -413,7 +412,3 @@ called from the console, an .R or .Rmd file.
 We hope these functions are useful for making your daily R coding work
 quicker and easier! Please don’t hesitate to modify for your own use or
 suggest updates through github.
-
-<br> <br>
-
-<a href="https://www.buymeacoffee.com/bansell" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
