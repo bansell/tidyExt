@@ -9,9 +9,9 @@
 #' @return A data_frame (aka tibble) to the console. EG.GO and entrez_joinTable are exported to R_GlobalEnv.
 #' @examples
 #' mtc_mat <- as.matrix(mtcars)
-#' mtc_mat %>% bighead(8)
+#' mtc_mat |> bighead(8)
 
 bighead <- function(.df, n = 6){
 
-  as_tibble(.df[1:n,1:n]) }
+  dplyr::as_tibble(.df[1:n,1:n]) }
 

@@ -12,10 +12,10 @@
 #' @export
 recip_anti <- function(x_vec, y_vec){
 
-require(tibble)
-require(dplyr)
-require(tidyr)
-require(purrr)
+requireNamespace("tibble")
+requireNamespace("dplyr")
+requireNamespace("tidyr")
+requireNamespace("purrr")
 
 a <- unique(x_vec)
 b <- unique(y_vec)

@@ -16,8 +16,9 @@
 
 #' @export
 recip_table <- function(x_vec, y_vec, check_order=F){
-  require(tibble); require(dplyr); require(tidyr); require(stringr)
-  require(janitor)
+  requireNameSpace("tibble"); requireNameSpace("dplyr")
+  requireNameSpace("tidyr"); requireNameSpace("stringr")
+  requireNameSpace("janitor")
 
   if(check_order==T){
 

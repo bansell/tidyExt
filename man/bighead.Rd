@@ -19,5 +19,5 @@ Extract from a DGE object genes associated with a GO term of interest, e.g. from
 }
 \examples{
 mtc_mat <- as.matrix(mtcars)
-mtc_mat \%>\% bighead(8)
+mtc_mat |> bighead(8)
 }

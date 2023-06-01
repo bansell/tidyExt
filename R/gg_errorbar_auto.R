@@ -16,16 +16,17 @@
 #'
 #' @describeIn geom_error_sd Draw standard deviation bars
 geom_error_sd <- function(...){
-  require(ggplot2)
+  requireNamespace("ggplot2")
   geom_errorbar( stat='summary',fun.data = mean_sd, ...)
 }
-
+#'
 #' @describeIn geom_error_sd Draw standard error bars
 geom_error_se <- function(...){
-  require(ggplot2)
+  requireNamespace("ggplot2")
   geom_errorbar( stat='summary',fun.data = mean_se, ...)
 }
 #'
+#' @noRd
 format_error <- function(d, error.limit = "both"){
 
   if(error.limit == "upper") d$ymin <- d$y
@@ -33,7 +34,7 @@ format_error <- function(d, error.limit = "both"){
   else if(error.limit == "none")  d$ymin <- d$ymax <- d$y
   d
 }
-#'
+#' @noRd
 mean_sd <- function (x, error.limit = "both")
 {
   sd = stats::sd(x, na.rm = TRUE)
@@ -41,5 +42,4 @@ mean_sd <- function (x, error.limit = "both")
   data.frame(y = .mean, ymin = .mean - sd, ymax = .mean + sd) %>%
     format_error(error.limit)
 }
-
 

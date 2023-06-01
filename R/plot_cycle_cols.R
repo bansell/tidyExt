@@ -20,8 +20,7 @@
 #' @export
 plot_cycle_cols <- function(df, X,Y, myLabel, colour_vec ){
 
-  require(tidyverse)
-
+  requireNamespace('ggplot2')
 
   var_plot2 <- function(x, ...){
 

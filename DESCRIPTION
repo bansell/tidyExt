@@ -6,15 +6,24 @@ Author: Brendan Ansell
 Maintainer: The package maintainer <rpbrendan@gmail.com>
 Description: This package contains a host of tidyverse helper functions designed to minimize keystrokes, 
     and to overcome some common pain-points in plotting, data summarization and environment management.
-License: 
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: dplyr,
     ggplot2,
     magrittr,
-    RColorBrewer,
     scales,
     tibble,
-    tidyselect
+    cowplot,
+    ggpubr,
+    glue,
+    janitor,
+    purrr,
+    readr,
+    rlang,
+    rstudioapi,
+    stringr,
+    tidyr,
+    vctrs
 RoxygenNote: 7.2.3
 Suggests: 
