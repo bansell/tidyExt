@@ -9,7 +9,8 @@ Description: This package contains a host of tidyverse helper functions designed
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr,
+Imports: 
+    dplyr,
     ggplot2,
     magrittr,
     scales,
@@ -20,10 +21,11 @@ Imports: dplyr,
     janitor,
     purrr,
     readr,
-    rlang,
+    rlang (>= 0.4.11),
     rstudioapi,
     stringr,
     tidyr,
     vctrs
 RoxygenNote: 7.2.3
 Suggests: 
+    roxygen2

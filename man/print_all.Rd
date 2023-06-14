@@ -13,6 +13,6 @@ A data frame.
 Print all data frame rows to console
 }
 \examples{
-mpg \%>\% print_all()
-mpg \%>\% print_all(n=50)
+mpg |> print_all()
+mpg |> print_all(n=50)
 }

@@ -78,7 +78,7 @@ Make boxplots with overlaid datapoints. There is no jitter in the y axis
 in order to accurately represent data values.
 
 ``` r
-mpg %>% ggplot(aes(x=class, y=cty)) +
+mpg |> ggplot(aes(x=class, y=cty)) +
    geom_boxjitter( point_size = 2, point_col='dodger blue')
 ```
 
@@ -92,7 +92,7 @@ Make nested boxplots with overlaid datapoints. There is no jitter in the
 y axis in order to accurately represent data values.
 
 ``` r
-mpg %>% ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
+mpg |> ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
  geom_boxdodge()
 ```
 
@@ -110,7 +110,7 @@ Adds a linear regression line to scatter plot and calls ggpubr to print
 the line equation and p value
 
 ``` r
-mpg %>% ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
+mpg |> ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
 ```
 
     ## `geom_smooth()` using formula 'y ~ x'
@@ -128,7 +128,7 @@ A wrapper for scale() that returns a single vector to use within
 scale() output:
 
 ``` r
-diamonds %>% mutate(table_scale = scale(table)) %>% select(table_scale) %>% str()
+diamonds |> mutate(table_scale = scale(table)) |> select(table_scale) |> str()
 ```
 
     ## tibble [53,940 × 1] (S3: tbl_df/tbl/data.frame)
@@ -139,7 +139,7 @@ diamonds %>% mutate(table_scale = scale(table)) %>% select(table_scale) %>% str(
 scale\_this() output:
 
 ``` r
-diamonds %>% mutate(table_scale = scale_this(table)) %>% select(table_scale) %>% str()
+diamonds |> mutate(table_scale = scale_this(table)) |> select(table_scale) |> str()
 ```
 
     ## tibble [53,940 × 1] (S3: tbl_df/tbl/data.frame)
@@ -153,7 +153,7 @@ A way to simultaneously count and sort the relative proportion of
 character data in descending order. Simple example:
 
 ``` r
-diamonds %>% sort_pct(cut)
+diamonds |> sort_pct(cut)
 ```
 
     ## # A tibble: 5 x 3
@@ -168,7 +168,7 @@ diamonds %>% sort_pct(cut)
 More complex:
 
 ``` r
-diamonds %>% sort_pct(cut,color)
+diamonds |> sort_pct(cut,color)
 ```
 
     ## # A tibble: 35 x 4
@@ -197,7 +197,7 @@ Minimize keystrokes for common plot label and legend modifications
 ## bottom\_legend()
 
 ``` r
-sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend()
+sample_n(diamonds,1000) |> ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
@@ -207,7 +207,7 @@ sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_poi
 ## no\_legend()
 
 ``` r
-sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend()
+sample_n(diamonds,1000) |> ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
@@ -219,7 +219,7 @@ sample_n(diamonds,1000) %>% ggplot(aes(x=carat,y=price, col=clarity)) + geom_poi
 Set x labels at any angle. 30° by default.
 
 ``` r
-mpg %>% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
+mpg |> ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
@@ -234,9 +234,9 @@ rapidly exhausted and important plotting information is lost. For
 example:
 
 ``` r
-my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
+my_df <- mpg |> mutate(year=factor(year), cyl=factor(cyl))
 
-my_df %>% gather(key,value,year,cyl,drv,manufacturer) %>% 
+my_df |> gather(key,value,year,cyl,drv,manufacturer) |> 
    ggplot(aes(cty,hwy,col=value)) + geom_point() + facet_wrap(~key,ncol=2) +
    bottom_legend()
 ```
@@ -258,7 +258,7 @@ my_features <- c('year','drv','cyl','manufacturer')
 ```
 
 ``` r
-my_df <- mpg %>% mutate(year=factor(year), cyl=factor(cyl))
+my_df <- mpg |> mutate(year=factor(year), cyl=factor(cyl))
 
 plot_cycle_cols(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
 ```
@@ -374,7 +374,7 @@ frame of dimensions n X n.
 ``` r
 diamond_mat <- as.matrix(diamonds[sample(1000), ])
 
-diamond_mat %>% bighead()
+diamond_mat |> bighead()
 ```
 
     ## # A tibble: 6 x 6
@@ -400,7 +400,7 @@ is useful for data frames of intermediate size (7-100 rows) instead of
 modifying `print()` or using `View()`.
 
 ``` r
-mpg %>% print_all()
+mpg |> print_all()
 ```
 
 NB Not run here. This will print the entire table to the console when

@@ -31,6 +31,6 @@ A ggplot.
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
-mpg \%>\% ggplot(aes(x=class, y=cty)) +
+mpg |> ggplot(aes(x=class, y=cty)) +
  geom_boxjitter(notch = F, point_size = 2, point_col='dodger blue')
 }

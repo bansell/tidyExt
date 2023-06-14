@@ -10,5 +10,5 @@ x_angle(x = 30)
 Set x axis labels at any angle
 }
 \examples{
-mpg \%>\% ggplot(aes(x=manufacturer,y=hwy)) + geom_boxplot() + x_angle(45)
+mpg |> ggplot(aes(x=manufacturer,y=hwy)) + geom_boxplot() + x_angle(45)
 }

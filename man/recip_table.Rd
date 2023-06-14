@@ -24,4 +24,5 @@ recip_table(mtcars$mpg, sort(mtcars$mpg), check_order = T)
 recip_table(mtcars$mpg[1:5], mtcars$mpg)
 recip_table(mtcars$mpg, mtcars$mpg)
 recip_table(mtcars$mpg, mtcars$cyl)
+
 }

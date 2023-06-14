@@ -13,5 +13,6 @@ Moves ggplot2 legend to bottom of plotting space.
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
-mpg \%>\% ggplot(aes(x=cty,y=hwy)) + geom_point(aes(col=drv)) + bottom_legend()
+require(ggplot2)
+mpg |> ggplot(aes(x=cty,y=hwy)) + geom_point(aes(col=drv)) + bottom_legend()
 }

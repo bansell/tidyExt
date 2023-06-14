@@ -20,7 +20,7 @@ brewer_GG_col(
 
 \item{nExtendColours}{If more colours are desired than are available in the standard palette, specify total colours here.}
 
-\item{plott}{Default will plot the colour palette with the hex codes overlaid.}
+\item{plot}{Default will plot the colour palette with the hex codes overlaid.}
 }
 \description{
 Select R color brewer palette and display swatch and hexcodes

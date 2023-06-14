@@ -4,7 +4,7 @@
 #' @param nColours Number of colours to select from palette. These will be evenly spaced across palette.
 #' @param my_palette An RColourBrewer palette name (see RColorBrewer::display.brewer.all())
 #' @param nExtendColours If more colours are desired than are available in the standard palette, specify total colours here.
-#' @param plott Default will plot the colour palette with the hex codes overlaid.
+#' @param plot Default will plot the colour palette with the hex codes overlaid.
 #' @export
 
 brewer_GG_col <- function(nColours = 4, my_palette = 'Paired', type = 'div', nExtendColours = nColours, plot = T){

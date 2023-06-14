@@ -6,6 +6,6 @@
 #' @description Omits ggplot2 legend.
 #' @export
 #' @examples
-#' mpg %>% ggplot(aes(x=cty,y=hwy)) + geom_point(aes(col=drv)) + no_legend()
+#' mpg |> ggplot(aes(x=cty,y=hwy)) + geom_point(aes(col=drv)) + no_legend()
 
 no_legend <- function()list(ggplot2::theme(legend.position='none'))

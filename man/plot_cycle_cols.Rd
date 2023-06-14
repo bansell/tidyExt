@@ -27,7 +27,7 @@ Use cases include PCA / MDS plots with multiple factors
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
-my_df <- mpg \%>\% mutate(year=factor(year), cyl=factor(cyl))
+my_df <- mpg |> mutate(year=factor(year), cyl=factor(cyl))
 my_features <- c('year','drv','cyl','manufacturer')
 
 plot_cycle_cols(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)

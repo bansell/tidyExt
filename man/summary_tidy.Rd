@@ -4,7 +4,7 @@
 \alias{summary_tidy}
 \title{Tibble output for baseR summary() function.}
 \usage{
-summary_tidy(tibble, data_type = "cont")
+summary_tidy(tbl, data_type = "cont")
 }
 \value{
 A tibble.
@@ -14,6 +14,7 @@ Default is to return summary stats for all columns containing continuous data.
 Option to specify categorical data.
 }
 \examples{
-mpg \%>\% summary_tidy(data_type = 'cont')
-mpg \%>\% summary_tidy(data_type = 'categ')
+mpg |> summary_tidy(data_type = 'cont')
+mpg |> summary_tidy(data_type = 'categ')
+
 }

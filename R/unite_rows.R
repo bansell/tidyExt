@@ -13,14 +13,17 @@
 #' @return If no groups are specified, returns a vector; else returns an ungrouped dataframe.
 #'
 #' @examples
-#' mpg %>% unite_rows(displ, displ_str, class)
-#' mpg %>% unite_rows(displ, displ_str, c(class, cyl), delim=',')
+#' mpg |> unite_rows(displ, displ_str, class)
+#' mpg |> unite_rows(displ, displ_str, c(class, cyl), delim=',')
 
 #' @export
 unite_rows <- function(.data, input_colname, output_colname, group_var , delim=';'){
 
-  input_colname  <- ensym(input_colname)
-  output_colname <- ensym(output_colname)
+  #run in console:
+  #usethis::use_tidy_eval() # https://stackoverflow.com/a/75676546
+
+  input_colname  <- rlang::ensym(input_colname)
+  output_colname <- rlang::ensym(output_colname)
 
   #adapted from https://stackoverflow.com/a/68866579
 
@@ -29,8 +32,8 @@ unite_rows <- function(.data, input_colname, output_colname, group_var , delim='
   if(length(grp_lst)>1) grp_lst <- grp_lst[-1]
   grps <- purrr::map_chr(grp_lst, rlang::as_string)
 
-  .data %>%
-    #group_by(...) %>% #works; see unite_rows_dotdot
-    group_by(across(all_of(grps))) %>%
-    reframe(!!{{output_colname}} := paste(!!input_colname, collapse = delim))
+  .data |>
+    #group_by(...) |> #works; see unite_rows_dotdot
+    dplyr::group_by(dplyr::across(tidyselect::all_of(grps))) |>
+    dplyr::reframe(!!{{output_colname}} := paste(!!input_colname, collapse = delim))
 }

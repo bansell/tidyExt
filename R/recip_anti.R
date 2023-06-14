@@ -8,19 +8,21 @@
 
 #' @examples
 #' recip_anti(x_vec= c('apple', 'banana','pear'), y_vec = c('banana','peach'))
+#'
+#' @importFrom rlang .data
 
 #' @export
 recip_anti <- function(x_vec, y_vec){
 
-requireNamespace("tibble")
-requireNamespace("dplyr")
-requireNamespace("tidyr")
-requireNamespace("purrr")
+# requireNamespace("tibble")
+# requireNamespace("dplyr")
+# requireNamespace("tidyr")
+# requireNamespace("purrr")
 
 a <- unique(x_vec)
 b <- unique(y_vec)
 
-print(c(head(a),head(b)))
+print(c(utils::head(a), utils::head(b)))
 
 res_a <- a[which(!a %in% b)]
 res_b <- b[which(!b %in% a)]
@@ -28,13 +30,13 @@ res_b <- b[which(!b %in% a)]
 if(!(length(res_a)>0 | length(res_b)>0)) {
   message('NULL result; try recip_table() first.')
 } else{
-  lst <- list(res_a,res_b)
+  lst <- list(res_a, res_b)
 
   #from https://stackoverflow.com/a/53684216
-  res_tbl <- map_dfr(lst, ~as_tibble(t(.)) ) %>%
-    mutate(tag=c("x_not_in_y",'y_not_in_x')) %>%
-    gather(key,value,-tag) %>%
-    spread(tag,value) %>% select(-key)
+  res_tbl <- purrr::map_dfr(lst, ~dplyr::as_tibble(t(.)) ) |>
+    dplyr::mutate(tag=c("x_not_in_y",'y_not_in_x')) |>
+    tidyr::gather("key","value",-.data$tag) |>
+    tidyr::spread(.data$tag,.data$value) |> dplyr::select(-.data$key)
 
   return(res_tbl)
 }

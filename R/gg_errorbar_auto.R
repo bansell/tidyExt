@@ -17,13 +17,13 @@
 #' @describeIn geom_error_sd Draw standard deviation bars
 geom_error_sd <- function(...){
   requireNamespace("ggplot2")
-  geom_errorbar( stat='summary',fun.data = mean_sd, ...)
+  ggplot2::geom_errorbar( stat='summary',fun.data = mean_sd, ...)
 }
 #'
 #' @describeIn geom_error_sd Draw standard error bars
 geom_error_se <- function(...){
   requireNamespace("ggplot2")
-  geom_errorbar( stat='summary',fun.data = mean_se, ...)
+  ggplot2::geom_errorbar( stat='summary',fun.data = mean_se, ...)
 }
 #'
 #' @noRd
@@ -39,7 +39,7 @@ mean_sd <- function (x, error.limit = "both")
 {
   sd = stats::sd(x, na.rm = TRUE)
   .mean <- base::mean(x, na.rm = TRUE)
-  data.frame(y = .mean, ymin = .mean - sd, ymax = .mean + sd) %>%
+  data.frame(y = .mean, ymin = .mean - sd, ymax = .mean + sd) |>
     format_error(error.limit)
 }
 

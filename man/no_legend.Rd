@@ -13,5 +13,5 @@ Omits ggplot2 legend.
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
-mpg \%>\% ggplot(aes(x=cty,y=hwy)) + geom_point(aes(col=drv)) + no_legend()
+mpg |> ggplot(aes(x=cty,y=hwy)) + geom_point(aes(col=drv)) + no_legend()
 }

@@ -4,10 +4,13 @@
 #' @return Returns a ggplot.
 #' @export
 #' @examples
-#' mpg %>% ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
+#' mpg |> ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
+#'
+#' @importFrom ggpubr ..p.label.
 
 geom_smooth_lm <- function(SE=T,  p.colour="black", ...) {
-  list(geom_smooth(method='lm',se=SE),
+  requireNamespace('ggpubr')
+  list(ggplot2::geom_smooth(method='lm',se=SE),
        ggpubr::stat_regline_equation(label.y.npc = 0.95),
-       ggpubr::stat_cor(aes(label = ..p.label..),colour = p.colour, label.y.npc=0.85))
+       ggpubr::stat_cor(ggplot2::aes(label = ..p.label..), colour = p.colour, label.y.npc=0.85))
 }

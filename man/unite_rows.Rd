@@ -28,6 +28,6 @@ Note this function allows non-standard evaluation. Quotes for column names and g
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
-mpg \%>\% unite_rows(displ, displ_str, class)
-mpg \%>\% unite_rows(displ, displ_str, c(class, cyl), delim=',')
+mpg |> unite_rows(displ, displ_str, class)
+mpg |> unite_rows(displ, displ_str, c(class, cyl), delim=',')
 }

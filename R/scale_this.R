@@ -10,5 +10,5 @@
 #' @examples
 #' scale_this(iris$Sepal.Length)
 scale_this <- function(x){
-  (x - mean(x, na.rm=TRUE)) / sd(x, na.rm=TRUE)
+  (x - mean(x, na.rm=TRUE)) / stats::sd(x, na.rm=TRUE)
 }
