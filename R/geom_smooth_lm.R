@@ -6,7 +6,7 @@
 #' @examples
 #' mpg |> ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
 #'
-#' @importFrom ggpubr ..p.label.
+
 
 geom_smooth_lm <- function(SE=T,  p.colour="black", ...) {
   requireNamespace('ggpubr')
