@@ -7,11 +7,15 @@
 #' @return A vector.
 #' @param character A character string.
 #' @describeIn all_after Extract all characters after match.
+#' @export
 all_after <-  function(character){glue::glue('[^{character}]*$')}
 #' @describeIn all_after Extract all characters before match.
+#'
+#' @export
 all_before <- function(character){glue::glue('[^{character}]+')}
 #'
 #' @examples
+#' require(stringr)
 #' stringr::str_extract('string_test',all_after("_"))
 #' stringr::str_remove('string_test',all_after("_"))
 #'
