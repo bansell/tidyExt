@@ -9,10 +9,11 @@
 #' @param input_colname The column name to collapse into rows.
 #' @param output_colname The new column name to contain collapsed data.
 #' @param group_var Any number of grouping columns.
-#' @param delim Delimeter for collapsed data.
+#' @param delim Delimiter for collapsed data.
 #' @return If no groups are specified, returns a vector; else returns an ungrouped dataframe.
 #'
 #' @examples
+#' require(ggplot2)
 #' mpg |> unite_rows(displ, displ_str, class)
 #' mpg |> unite_rows(displ, displ_str, c(class, cyl), delim=',')
 

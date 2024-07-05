@@ -18,6 +18,8 @@ brewer_GG_col(
 
 \item{my_palette}{An RColourBrewer palette name (see RColorBrewer::display.brewer.all())}
 
+\item{type}{Type of palette -     one of "seq" (sequential), "div" (diverging) or "qual" (qualitative)}
+
 \item{nExtendColours}{If more colours are desired than are available in the standard palette, specify total colours here.}
 
 \item{plot}{Default will plot the colour palette with the hex codes overlaid.}

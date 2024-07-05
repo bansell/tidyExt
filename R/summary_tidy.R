@@ -6,6 +6,7 @@
 #' @return A tibble.
 
 #' @examples
+#' require(ggplot2)
 #' mpg |> summary_tidy(data_type = 'cont')
 #' mpg |> summary_tidy(data_type = 'categ')
 #'
@@ -26,7 +27,7 @@ summary_tidy <- function(tbl, data_type = "cont"){
     dplyr::mutate(dplyr::across(.fns = ~trimws(.))) |>
     tidyr::drop_na() |> tidyr::spread(.data$x2, .data$value)
 
-  cont <- t1 |> filter(! .data$stat %in% c('Class','Length')) |>
+  cont <- t1 |> dplyr::filter(! .data$stat %in% c('Class','Length')) |>
     dplyr::mutate(dplyr::across(.cols = -1, .fns = ~as.numeric(.))) |>
     dplyr::select_if(not_all_na) |>
     #tidy reorder without forcats:

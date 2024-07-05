@@ -2,7 +2,7 @@
 % Please edit documentation in R/bighead.R
 \name{bighead}
 \alias{bighead}
-\title{Extract from a DGE object genes associated with a GO term of interest, e.g. from GSEA testing. Requires GOsource() output.}
+\title{big head}
 \usage{
 bighead(.df, n = 6)
 }

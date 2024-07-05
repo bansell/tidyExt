@@ -78,7 +78,7 @@ Make boxplots with overlaid datapoints. There is no jitter in the y axis
 in order to accurately represent data values.
 
 ``` r
-mpg |> ggplot(aes(x=class, y=cty)) +
+mpg |> ggplot2::ggplot(aes(x=class, y=cty)) +
    geom_boxjitter( point_size = 2, point_col='dodger blue')
 ```
 
@@ -92,7 +92,7 @@ Make nested boxplots with overlaid datapoints. There is no jitter in the
 y axis in order to accurately represent data values.
 
 ``` r
-mpg |> ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
+mpg |> ggplot2::ggplot(aes(x=class, y=cty, col=interaction(drv,cyl))) +
  geom_boxdodge()
 ```
 
@@ -110,7 +110,7 @@ Adds a linear regression line to scatter plot and calls ggpubr to print
 the line equation and p value
 
 ``` r
-mpg |> ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
+mpg |> ggplot2::ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
 ```
 
     ## `geom_smooth()` using formula = 'y ~ x'
@@ -197,7 +197,7 @@ Minimize keystrokes for common plot label and legend modifications
 ## bottom_legend
 
 ``` r
-sample_n(diamonds,1000) |> ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend()
+sample_n(diamonds,1000) |> ggplot2::ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + bottom_legend()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
@@ -207,7 +207,7 @@ sample_n(diamonds,1000) |> ggplot(aes(x=carat,y=price, col=clarity)) + geom_poin
 ## no_legend
 
 ``` r
-sample_n(diamonds,1000) |> ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend()
+sample_n(diamonds,1000) |> ggplot2::ggplot(aes(x=carat,y=price, col=clarity)) + geom_point() + no_legend()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
@@ -219,7 +219,7 @@ sample_n(diamonds,1000) |> ggplot(aes(x=carat,y=price, col=clarity)) + geom_poin
 Set x labels at any angle. 30° by default.
 
 ``` r
-mpg |> ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
+mpg |> ggplot2::ggplot(aes(x=manufacturer,y=hwy)) + geom_boxjitter() + x_angle()
 ```
 
 ![](tidyExt_vignette_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
@@ -237,7 +237,7 @@ example:
 my_df <- mpg |> mutate(year=factor(year), cyl=factor(cyl))
 
 my_df |> gather(key,value,year,cyl,drv,manufacturer) |> 
-   ggplot(aes(cty,hwy,col=value)) + geom_point() + facet_wrap(~key,ncol=2) +
+   ggplot2::ggplot(aes(cty,hwy,col=value)) + geom_point() + facet_wrap(~key,ncol=2) +
    bottom_legend()
 ```
 

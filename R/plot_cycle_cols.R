@@ -13,7 +13,8 @@
 #' @importFrom rlang .data
 #'
 #' @examples
-#' my_df <- mpg |> mutate(year=factor(year), cyl=factor(cyl))
+#' require(ggplot2);
+#' my_df <- mpg |> dplyr::mutate(year=factor(year), cyl=factor(cyl))
 #' my_features <- c('year','drv','cyl','manufacturer')
 #'
 #' plot_cycle_cols(df = my_df,  X='cty',Y='hwy', myLabel = 'manufacturer', colour_vec = my_features)
@@ -21,7 +22,7 @@
 #' @export
 plot_cycle_cols <- function(df, X,Y, myLabel, colour_vec ){
 
-  requireNamespace('ggplot2')
+  require(ggplot2)
 
   var_plot <- function(x, ...){
 

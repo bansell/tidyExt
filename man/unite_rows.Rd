@@ -15,7 +15,7 @@ unite_rows(.data, input_colname, output_colname, group_var, delim = ";")
 
 \item{group_var}{Any number of grouping columns.}
 
-\item{delim}{Delimeter for collapsed data.}
+\item{delim}{Delimiter for collapsed data.}
 }
 \value{
 If no groups are specified, returns a vector; else returns an ungrouped dataframe.
@@ -28,6 +28,7 @@ Note this function allows non-standard evaluation. Quotes for column names and g
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
+require(ggplot2)
 mpg |> unite_rows(displ, displ_str, class)
 mpg |> unite_rows(displ, displ_str, c(class, cyl), delim=',')
 }

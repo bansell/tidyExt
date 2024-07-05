@@ -17,7 +17,7 @@
 #' @return A data frame / tibble.
 #' @examples
 
-#' require(tibble)
+#' requireNamespace("tibble")
 #'
 #' #Create tibble from mtcars data
 #' mtcars_tbl <- tibble::as_tibble(mtcars,rownames='model')
@@ -25,7 +25,7 @@
 #' #Create a lookup table with the soft search term ($1) and new standardized/consistent term ($2)
 #' lookup_tbl <- tibble::tribble(~key1, ~key2,
 #'                       'mazda rx4', 'Mazda RX4',
-#'                     # 'Merc', 'Mercedes',
+#'                       'Merc', 'Mercedes',
 #'                       'merc', 'Mercedes',
 #'                       'HORNET','Hornet',
 #'                       'hornet','Hornet')
@@ -34,7 +34,7 @@
 #'              #lookup = lookup_tbl |> dplyr::slice(-1),
 #'              search_term=key1, replace_term=key2,
 #'              .df=mtcars_tbl, search_col='model', new_col='model_clean',
-#'              .default = wt, ignore.case=T)
+#'              .default = wt, ignore.case=TRUE)
 #'
 #' fuzzy_lookup(lookup = lookup_tbl |> dplyr::slice(-1),
 #'              search_term=key1, replace_term=key2,
@@ -44,7 +44,7 @@
 #' @export
 fuzzy_lookup <- function(lookup, search_term, replace_term,
                          .df, search_col, new_col,
-                         .default='other', ignore.case=F){
+                         .default='other', ignore.case=FALSE){
 
   lookup <- lookup |>
     dplyr::select(x1={{search_term}}, x2={{replace_term}}) #only allow 2 cols & constrain colnames.

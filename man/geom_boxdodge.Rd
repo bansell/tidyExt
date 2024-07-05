@@ -18,6 +18,7 @@ A ggplot.
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
-mpg |> ggplot(aes(x=class, y=cty, col=factor(year))) +
+require(ggplot2)
+mpg |> ggplot2::ggplot(aes(x=class, y=cty, col=factor(year))) +
  geom_boxdodge(point_size = 3,box_alpha = 0.75)
 }

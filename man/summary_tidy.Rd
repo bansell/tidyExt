@@ -14,6 +14,7 @@ Default is to return summary stats for all columns containing continuous data.
 Option to specify categorical data.
 }
 \examples{
+require(ggplot2)
 mpg |> summary_tidy(data_type = 'cont')
 mpg |> summary_tidy(data_type = 'categ')
 

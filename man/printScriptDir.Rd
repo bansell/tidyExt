@@ -9,6 +9,3 @@ printScriptDir(x = .)
 \description{
 Print complete path of current file
 }
-\examples{
-printScriptDir()
-}

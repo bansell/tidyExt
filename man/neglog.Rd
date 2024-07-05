@@ -6,6 +6,9 @@
 \usage{
 neglog(x)
 }
+\arguments{
+\item{x}{p value}
+}
 \value{
 A vector.
 }

@@ -4,6 +4,7 @@
 #' @param nColours Number of colours to select from palette. These will be evenly spaced across palette.
 #' @param my_palette An RColourBrewer palette name (see RColorBrewer::display.brewer.all())
 #' @param nExtendColours If more colours are desired than are available in the standard palette, specify total colours here.
+#' @param type Type of palette - 	one of "seq" (sequential), "div" (diverging) or "qual" (qualitative)
 #' @param plot Default will plot the colour palette with the hex codes overlaid.
 #' @export
 

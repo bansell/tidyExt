@@ -9,7 +9,7 @@
 
 #' @examples
 #' recip_table(mtcars$mpg, mtcars$mpg[1:5])
-#' recip_table(mtcars$mpg, sort(mtcars$mpg), check_order = T)
+#' recip_table(mtcars$mpg, sort(mtcars$mpg), check_order = TRUE)
 #' recip_table(mtcars$mpg[1:5], mtcars$mpg)
 #' recip_table(mtcars$mpg, mtcars$mpg)
 #' recip_table(mtcars$mpg, mtcars$cyl)
@@ -17,40 +17,34 @@
 #' @importFrom rlang .data
 
 #' @export
-recip_table <- function(x_vec, y_vec, check_order=F){
-
-  if(check_order==T){
-
-
-    message(recip_order(x_vec,y_vec))
-
+function (x_vec, y_vec, check_order = FALSE, print_matches = FALSE)
+{
+  if (check_order) {
+    message(recip_order(x_vec, y_vec))
   }
 
-  a <- table(unique(x_vec) %in% unique(y_vec)) |>  tibble::as_tibble_row() |> tibble::tidy_names()
-  b <- table(unique(y_vec) %in% unique(x_vec)) |>  tibble::as_tibble_row() |> tibble::tidy_names()
+  unique_x_in_y <- unique(x_vec) %in% unique(y_vec)
+  unique_y_in_x <- unique(y_vec) %in% unique(x_vec)
 
-  # print(glue::glue('Unique x in y:', a, '\n',
-  #                  'Unique y in x:', b,'.'))
-  res <- dplyr::bind_cols(
-    tibble::tibble('Match' = c('Unique x in y:','Unique y in x:')),
-    dplyr::bind_rows(a,b)) |>
-    dplyr::mutate_at(.vars = -1, .funs = ~as.numeric(as.character(.))) |>
-    dplyr::mutate(dplyr::across(-1,.fns=~ifelse(is.na(.),0,.))) |>
-    janitor::clean_names()
+  if (print_matches) {
+    print(tibble('matching_values' = unique(x_vec[unique_x_in_y])))
+  }
 
-  if(length(colnames(res))>2){
-    return(res |> dplyr::select(1, .data$true, .data$false))
+  a <- tibble::tidy_names(tibble::as_tibble_row(table(unique_x_in_y)))
+  b <- tibble::tidy_names(tibble::as_tibble_row(table(unique_y_in_x)))
 
-  }else{
+  res <- janitor::clean_names(
+    dplyr::mutate(dplyr::mutate_at(dplyr::bind_cols(
+      tibble::tibble(Match = c("Unique x in y:", "Unique y in x:")),
+      dplyr::bind_rows(a, b)), .vars = -1,
+      .funs = ~as.numeric(as.character(.))),
+      dplyr::across(-1, .fns = ~ifelse(is.na(.), 0, .))))
+
+  if (length(colnames(res)) > 2) {
+    return(dplyr::select(res, 1, true, false))
+  } else {
     return(res)
   }
-
 }
-
-
-
-
-
-
 
 

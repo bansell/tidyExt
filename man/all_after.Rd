@@ -16,8 +16,8 @@ all_before(character)
 A vector.
 }
 \description{
-Identifies substring occuring before or after character.
-Note: these are technically all_after_last() and all_before_first() occurances.
+Identifies sub-string occuring before or after character.
+Note: these are technically all_after_last() and all_before_first() occurrences.
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \section{Functions}{

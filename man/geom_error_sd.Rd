@@ -23,13 +23,3 @@ Adapted from \href{https://rpkgs.datanovia.com/ggpubr/}{ggpubr}.
 \item \code{geom_error_se()}: Draw standard error bars
 
 }}
-\examples{
-ggplot2::ggplot(mtcars, aes(x=cyl,y= qsec)) +
-  geom_jitter(alpha=0.25,width=0.25) +
-  geom_error_se(col='red', lwd=1,width=0.4) +
-  geom_error_sd(col='blue',lwd=1,width=0.6) +
-  geom_point(stat='summary',fun=mean,col='purple') +
-  ggtitle('error bars',
-  subtitle = '±1 standard deviation in blue;\n±1 standard error of the mean in red')
-
-}

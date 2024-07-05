@@ -2,6 +2,7 @@
 % Please edit documentation in R/tidyExt-package.R
 \docType{package}
 \name{tidyExt}
+\alias{tidyExt-package}
 \alias{tidyExt}
 \title{tidyExt}
 \description{

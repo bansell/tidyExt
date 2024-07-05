@@ -1,7 +1,7 @@
 #' stringr regex helpers
 #'
-#' Identifies substring occuring before or after character.
-#' Note: these are technically all_after_last() and all_before_first() occurances.
+#' Identifies sub-string occuring before or after character.
+#' Note: these are technically all_after_last() and all_before_first() occurrences.
 #' see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 #'
 #' @return A vector.
@@ -15,7 +15,7 @@ all_after <-  function(character){glue::glue('[^{character}]*$')}
 all_before <- function(character){glue::glue('[^{character}]+')}
 #'
 #' @examples
-#' require(stringr)
+#' requireNamespace(stringr)
 #' stringr::str_extract('string_test',all_after("_"))
 #' stringr::str_remove('string_test',all_after("_"))
 #'

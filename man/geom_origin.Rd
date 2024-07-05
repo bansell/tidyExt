@@ -14,7 +14,3 @@ geom_origin(lty = 2, xorig = 0, yorig = 0, ...)
 \description{
 Geom origin. Draw x-y crosshair through the origin.
 }
-\examples{
-df <- tibble(x=rnorm(50),y=rnorm(50))
-ggplot(df, aes(x=x,y=y)) + geom_point() + geom_origin()
-}

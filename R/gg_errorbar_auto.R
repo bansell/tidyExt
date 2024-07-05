@@ -5,24 +5,15 @@
 #'
 #' @return A grob (graphical object).
 #'
-#' @examples
-#' ggplot2::ggplot(mtcars, aes(x=cyl,y= qsec)) +
-#'   geom_jitter(alpha=0.25,width=0.25) +
-#'   geom_error_se(col='red', lwd=1,width=0.4) +
-#'   geom_error_sd(col='blue',lwd=1,width=0.6) +
-#'   geom_point(stat='summary',fun=mean,col='purple') +
-#'   ggtitle('error bars',
-#'   subtitle = '±1 standard deviation in blue;\n±1 standard error of the mean in red')
-#'
 #' @describeIn geom_error_sd Draw standard deviation bars
 geom_error_sd <- function(...){
-  requireNamespace("ggplot2")
+  require(ggplot2)
   ggplot2::geom_errorbar( stat='summary',fun.data = mean_sd, ...)
 }
 #'
 #' @describeIn geom_error_sd Draw standard error bars
 geom_error_se <- function(...){
-  requireNamespace("ggplot2")
+  require(ggplot2)
   ggplot2::geom_errorbar( stat='summary',fun.data = mean_se, ...)
 }
 #'
@@ -43,3 +34,12 @@ mean_sd <- function (x, error.limit = "both")
     format_error(error.limit)
 }
 
+#' @examples
+#' require(ggplot2)
+#' ggplot2::ggplot(mtcars, aes(x=cyl,y= qsec)) +
+#'   geom_jitter(alpha=0.25,width=0.25) +
+#'   geom_error_se(col='red', lwd=1,width=0.4) +
+#'   geom_error_sd(col='blue',lwd=1,width=0.6) +
+#'   geom_point(stat='summary',fun=mean,col='purple') +
+#'   ggtitle('error bars',
+#'   subtitle = '±1 standard deviation in blue;\n±1 standard error of the mean in red')

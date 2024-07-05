@@ -10,8 +10,9 @@
 #' @param jitterheight jitter height; default is 0
 #' @param jitterwidth jitter width; default is 0.25
 #' @examples
-#' mpg |> ggplot(aes(x=class, y=cty)) +
-#'  geom_boxjitter(notch = F, point_size = 2, point_col='dodger blue')
+#' require(ggplot2)
+#' mpg |> ggplot2::ggplot(aes(x=class, y=cty)) +
+#'  geom_boxjitter(notch = FALSE, point_size = 2, point_col='dodger blue')
 
 #' @export
 geom_boxjitter <- function (..., point_size =0.5,

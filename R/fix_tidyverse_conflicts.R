@@ -1,6 +1,11 @@
+
+#' @title Fix tidyverse conflicts
+#' @description Find functions with name conflicts in the global environment and reassign all, prioritizing tidyverse functions.
+#'
+#' @importFrom tidyverse tidyverse_conflicts
 #' @export
 fix_tidyverse_conflicts <- function() {
-
+  require(tidyverse)
   confl <- tidyverse::tidyverse_conflicts()
 
   confl_tbl <- purrr::map2_df(confl,

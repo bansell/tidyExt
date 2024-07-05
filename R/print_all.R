@@ -3,6 +3,7 @@
 #' @return A data frame.
 #' @export
 #' @examples
+#' require(ggplot2)
 #' mpg |> print_all()
 #' mpg |> print_all(n=50)
 

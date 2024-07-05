@@ -13,6 +13,7 @@ Returns a ggplot.
 see \href{https://github.com/bansell/tidyExt#tidyext-package}{\strong{tidyExt vignette}}
 }
 \examples{
-mpg |> ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
+require(ggplot2)
+mpg |> ggplot2::ggplot(aes(cty,hwy)) + geom_point() + geom_smooth_lm()
 
 }

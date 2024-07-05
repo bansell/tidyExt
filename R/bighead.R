@@ -1,8 +1,7 @@
-#bighead function
+#' @title big head
 
-
-
-#' Extract from a DGE object genes associated with a GO term of interest, e.g. from GSEA testing. Requires GOsource() output.
+#' @description
+#'  Extract from a DGE object genes associated with a GO term of interest, e.g. from GSEA testing. Requires GOsource() output.
 #' @param .df A data frame or matrix
 #' @param n number of rows and columns to print (square output, starting from row1, col1)
 #' @export

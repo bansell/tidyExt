@@ -12,7 +12,7 @@ fuzzy_lookup(
   search_col,
   new_col,
   .default = "other",
-  ignore.case = F
+  ignore.case = FALSE
 )
 }
 \arguments{
@@ -43,7 +43,7 @@ Designed for data cleaning/standardization. Implements soft search, and use of l
 Maps over lookup table and runs str_detect(string, regex(query)) under the hood.
 }
 \examples{
-require(tibble)
+requireNamespace("tibble")
 
 #Create tibble from mtcars data
 mtcars_tbl <- tibble::as_tibble(mtcars,rownames='model')
@@ -51,7 +51,7 @@ mtcars_tbl <- tibble::as_tibble(mtcars,rownames='model')
 #Create a lookup table with the soft search term ($1) and new standardized/consistent term ($2)
 lookup_tbl <- tibble::tribble(~key1, ~key2,
                       'mazda rx4', 'Mazda RX4',
-                    # 'Merc', 'Mercedes',
+                      'Merc', 'Mercedes',
                       'merc', 'Mercedes',
                       'HORNET','Hornet',
                       'hornet','Hornet')
@@ -60,7 +60,7 @@ fuzzy_lookup(lookup = lookup_tbl,
              #lookup = lookup_tbl |> dplyr::slice(-1),
              search_term=key1, replace_term=key2,
              .df=mtcars_tbl, search_col='model', new_col='model_clean',
-             .default = wt, ignore.case=T)
+             .default = wt, ignore.case=TRUE)
 
 fuzzy_lookup(lookup = lookup_tbl |> dplyr::slice(-1),
              search_term=key1, replace_term=key2,

@@ -7,7 +7,8 @@
 #' @param box_alpha alpha for boxplot background ; default is 0.5
 #' @examples
 
-#' mpg |> ggplot(aes(x=class, y=cty, col=factor(year))) +
+#' require(ggplot2)
+#' mpg |> ggplot2::ggplot(aes(x=class, y=cty, col=factor(year))) +
 #'  geom_boxdodge(point_size = 3,box_alpha = 0.75)
 
 #' @export
