@@ -53,6 +53,6 @@
 #'}
 #'
 #' @title tidyExt
-#' @docType package
+#' @docType "_PACKAGE"
 #' @name tidyExt
 NULL
