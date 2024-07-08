@@ -17,7 +17,7 @@
 #' @importFrom rlang .data
 
 #' @export
-function (x_vec, y_vec, check_order = FALSE, print_matches = FALSE)
+recip_table <- function (x_vec, y_vec, check_order = FALSE, print_matches = FALSE)
 {
   if (check_order) {
     message(recip_order(x_vec, y_vec))
@@ -27,7 +27,7 @@ function (x_vec, y_vec, check_order = FALSE, print_matches = FALSE)
   unique_y_in_x <- unique(y_vec) %in% unique(x_vec)
 
   if (print_matches) {
-    print(tibble('matching_values' = unique(x_vec[unique_x_in_y])))
+    print(tibble::tibble('matching_values' = unique(x_vec[unique_x_in_y])))
   }
 
   a <- tibble::tidy_names(tibble::as_tibble_row(table(unique_x_in_y)))
